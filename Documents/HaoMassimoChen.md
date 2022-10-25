@@ -1,0 +1,1 @@
+made this file, and I'm in the Api team. Doing some research about it, but I doubt there will be actual stuff to do before having an actual webpage during the first couple weeks
