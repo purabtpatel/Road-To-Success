@@ -37,7 +37,7 @@ li:nth-child(n+1){
 
 
 .heading {
-color: var(--yellow);
+color: var(--white--);
 font-weight: 400;
 font-size: 96px;
 line-height: 96px;
@@ -49,6 +49,9 @@ margin: 80px;
   padding:10px 16px;
 
   background-color:white;
+}
+#your{
+  color:var(--yellow)
 }
 
 

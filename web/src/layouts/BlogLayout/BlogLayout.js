@@ -4,7 +4,6 @@ const BlogLayout = ({ children }) => {
   return (
     <>
       <header>
-
         <div className="navigation">
           <nav>
             <ul>
@@ -23,7 +22,11 @@ const BlogLayout = ({ children }) => {
       </header>
       <div className="horizontal-bar"></div>
       <div className="heading">
-        <h1> Manage your task,<br></br> your way</h1>
+        <h1>
+          {' '}
+          Manage <span id="your">your</span> task,<br></br>{' '}
+          <span id="your">your</span> way
+        </h1>
       </div>
       <main>{children}</main>
     </>

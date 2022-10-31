@@ -8,12 +8,10 @@ const HomePage = () => {
     <>
       <Helmet bodyAttributes={{ style: 'background-color: #717891' }} />
 
-
       <div className="body">
         <MetaTags title="Home" description="Home page" />
         <BlogLayout />
       </div>
-      
     </>
   )
 }
