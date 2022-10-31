@@ -4,6 +4,7 @@
   --yellow:#F8CD8B; /* text*/
   --light-blue-background:#717891;/* page background*/
   --white--:#ffffff;
+  --orange--:#F39B85;
 
 }
 
@@ -52,6 +53,17 @@ margin: 80px;
 }
 #your{
   color:var(--yellow)
+}
+.footer{
+  margin:0;
+  padding:10px 16px;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  right:0px;
+
+
+  background-color:var(--orange--);
 }
 
 

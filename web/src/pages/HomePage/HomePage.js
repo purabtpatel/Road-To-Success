@@ -12,6 +12,7 @@ const HomePage = () => {
         <MetaTags title="Home" description="Home page" />
         <BlogLayout />
       </div>
+      <div className="footer"></div>
     </>
   )
 }
