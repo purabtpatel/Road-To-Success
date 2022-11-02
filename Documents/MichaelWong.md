@@ -1,1 +1,1 @@
-Hello I'm Michael
+Nov 2 - Figured out an approach to QA testing. Working on figuring out how to get the automated tests working.
