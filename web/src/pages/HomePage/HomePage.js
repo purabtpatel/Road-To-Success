@@ -2,7 +2,7 @@ import { MetaTags } from '@redwoodjs/web'
 import { Helmet } from '@redwoodjs/web'
 
 import AppointmentItem from 'src/components/AppointmentItem/AppointmentItem'
-import BlogLayout from 'src/layouts/BlogLayout/BlogLayout'
+
 
 const HomePage = () => {
   return (
