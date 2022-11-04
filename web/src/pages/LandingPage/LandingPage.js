@@ -1,6 +1,9 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { Helmet } from '@redwoodjs/web'
+
+import AppointmentItem from 'src/components/AppointmentItem/AppointmentItem'
+
 const LandingPage = () => {
   return (
     <>
@@ -30,7 +33,10 @@ const LandingPage = () => {
           Manage <span id="your">your</span> tasks,<br></br>{' '}
           <span id="your">your</span> way
         </h1>
+
       </div>
+      <AppointmentItem />
+      <div className="footer"></div>
 
     </>
   )
