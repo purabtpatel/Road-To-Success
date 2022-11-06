@@ -14,7 +14,7 @@ const TaskCard = ({task}) => {
   }
   else if (task.status === "Not Started") {
     status = <button>Not Started</button>;
-    color = ".50";
+    color = "red.50";
   }
   else if (task.status === "Rolled Over") {
     status = <button>Rolled Over</button>;

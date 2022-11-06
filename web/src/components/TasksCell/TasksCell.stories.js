@@ -10,7 +10,7 @@ export const empty = () => {
 }
 
 export const failure = (args) => {
-  return Failure ? <Failure error={new Error('Oh no')} {...args} /> : <></>
+  return Failure ? <Failure error={new Error('Failed to Load Tasks')} {...args} /> : <></>
 }
 
 export const success = (args) => {
