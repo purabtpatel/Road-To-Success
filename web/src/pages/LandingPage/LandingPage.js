@@ -1,8 +1,9 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { Helmet } from '@redwoodjs/web'
+import AppointmentListsCell from '@redwoodjs/web'
 
-import AppointmentItem from 'src/components/AppointmentItem/AppointmentItem'
+
 
 const LandingPage = () => {
   return (
@@ -35,8 +36,9 @@ const LandingPage = () => {
         </h1>
 
       </div>
-      <AppointmentItem />
+
       <div className="footer"></div>
+      
 
     </>
   )
