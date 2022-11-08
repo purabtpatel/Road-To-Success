@@ -5,6 +5,9 @@
   - [*10/23/22*](#102322)
   - [*10/25/22*](#102522)
   - [*10/26/22*](#102622)
+  - [*11/02/22*](#110222)
+  - [*11/06/22*](#110622)
+  - [*11/07/22*](#110722)
 - [Current Status](#current-status)
 - [Completed Tasks](#completed-tasks)
 
@@ -41,6 +44,24 @@
 
 ## *10/26/22*
 - Gave feedback on UI, Security, and API design decisions
+
+## *11/02/22*
+- Helped guide security team with OAuth implementation.
+
+## *11/06/22*
+- Got consensus on task display functionality, how we want the task items to be rolled over if at all.
+  - Agreed that a task will expire on the day of creation, but the user will have the option to renew the task when looking at past dates and tasks for those days
+- Fixed date selection feature on task view.
+  - The problem was that the html input type date would be of format yyyy-mm-dd but the format for on screen display and api use is mm-dd-yyyy
+  - The input type for html is also in string, so the left and right button for incrementing and decrementing date would need to go through string manipulation, and adjust the html input element also.
+  - The left and right buttons are separate from the html element, so changing the date using the buttons would need to change the date variable, and the html input element to reflect currently selected date.
+  - This would mean a conversion would need to be made between the html format and the mm-dd-yyyy format.
+
+## *11/07/22*
+- Added status cycling functionality
+  - The status on a task item needs to change without a save or ok button to confirm. I decided the best way to do this would be to make the displayed status a button, when clicked would change the status and go from Not Started -> Started -> Completed -> rolled over
+  - This was unexpectedly hard because I was trying to use the useEffect hook to initialize a status variable on load using the status prop from cells. This would cause the component to do an infinite loop, updating the the status variable, refreshing the page, updating the status variable. Had no idea why this was happening.
+  - Realized an easier way to do it using useState hook. I will use this method for updating urgency
 
 # Current Status
 - Working on Task View (also TasksCell and TaskCard) which will be shown in Monthly, Weekly, Daily views.
