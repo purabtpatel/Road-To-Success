@@ -19,9 +19,9 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ tasks }) => {
   return (
-    <ul style={{'list-style-type': 'none'}}>
+    <ul style={{ 'list-style-type': 'none' }}>
       {tasks.map((item) => {
-        return <li key={item.id}><TaskCard task={item}/></li>
+        return <li key={item.id}><TaskCard task={item} /></li>
       })}
     </ul>
   )
