@@ -6049,6 +6049,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-oauth/google@npm:latest":
+  version: 0.4.0
+  resolution: "@react-oauth/google@npm:0.4.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 6f07b52bccf81d0d80a0c9c9cebb4e7eaf59617b6edab1a3ae8b07ce156a2366fc60607bc648d27cc22c0c5e3b7c3d2cf00bf042011c263d34622a5b34066a03
+  languageName: node
+  linkType: hard
+
 "@redwoodjs/api-server@npm:3.2.0":
   version: 3.2.0
   resolution: "@redwoodjs/api-server@npm:3.2.0"
@@ -23097,6 +23107,7 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@google-cloud/local-auth": 2.1.0
+    "@react-oauth/google": latest
     "@redwoodjs/core": 3.2.0
     framer-motion: ^7.6.2
     googleapis: 105

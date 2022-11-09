@@ -1,5 +1,6 @@
 import { Auth0Client } from '@auth0/auth0-spa-js'
 import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 import * as theme from 'config/chakra.config'
 
 import { AuthProvider } from '@redwoodjs/auth'
@@ -34,16 +35,18 @@ const extendedTheme = extendTheme(theme)
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <AuthProvider client={auth0} type="auth0">
-      <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
-        <ColorModeScript />
-        <ChakraProvider theme={extendedTheme}>
-          <RedwoodApolloProvider>
-            <Routes />
-          </RedwoodApolloProvider>
-        </ChakraProvider>
-      </RedwoodProvider>
-    </AuthProvider>
+    <GoogleOAuthProvider clientId="485958325211-luj6ksvlc0g79b26t67k1pceqommi2g9.apps.googleusercontent.com">
+      <AuthProvider client={auth0} type="auth0">
+        <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+          <ColorModeScript />
+          <ChakraProvider theme={extendedTheme}>
+            <RedwoodApolloProvider>
+              <Routes />
+            </RedwoodApolloProvider>
+          </ChakraProvider>
+        </RedwoodProvider>
+      </AuthProvider>
+    </GoogleOAuthProvider>
   </FatalErrorBoundary>
 )
 
