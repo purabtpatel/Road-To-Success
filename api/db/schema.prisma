@@ -26,7 +26,6 @@ model Task {
   status_id Int
   title     String?
   details   String?
-  urgency   Int
   priority  Int
   date      DateTime
   createdAt DateTime @default(now())
