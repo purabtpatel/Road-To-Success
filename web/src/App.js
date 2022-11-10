@@ -35,7 +35,7 @@ const extendedTheme = extendTheme(theme)
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <GoogleOAuthProvider clientId="485958325211-luj6ksvlc0g79b26t67k1pceqommi2g9.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="485958325211-1ui8sbsljohi8n275b9jth7sv6qlrabh.apps.googleusercontent.com">
       <AuthProvider client={auth0} type="auth0">
         <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
           <ColorModeScript />
