@@ -2,10 +2,10 @@ import AppointmentItem from '../AppointmentItem/AppointmentItem'
 
 export const QUERY = gql`
   query AppointmentListsQuery {
-    AppointmentList {
+    appointmentsLists {
       id
-      Title
-      Duration
+      title
+      duration
     }
   }
 `
@@ -18,12 +18,15 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-export const Success = ({ appointmentLists }) => {
+export const Success = ({ appointments }) => {
+  const titlefeed = appointments.map((appointment) => (
+    <h2 key={appointment.id}>Title: {appointment.title}</h2>
+  ))
   return (
-    <ul>
-      {appointmentLists.map((item) => {
-        return <li key={item.id}>{JSON.stringify(item)}</li>
-      })}
+    <ul style={{ 'list-style-type': 'none' }}>
+      <li>
+        <AppointmentItem></AppointmentItem>{titlefeed}
+      </li>
     </ul>
   )
 }

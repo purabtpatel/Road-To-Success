@@ -1,16 +1,12 @@
 import { Link, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
 import { Helmet } from '@redwoodjs/web'
 import AppointmentListsCell from '@redwoodjs/web'
-
-
 
 const LandingPage = () => {
   return (
     <>
-    <Helmet bodyAttributes={{ style: 'background-color: #717891' }} />
+      <Helmet bodyAttributes={{ style: 'background-color: #717891' }} />
       <header>
-
         <div className="navigation">
           <nav>
             <ul>
@@ -34,12 +30,9 @@ const LandingPage = () => {
           Manage <span id="your">your</span> tasks,<br></br>{' '}
           <span id="your">your</span> way
         </h1>
-
       </div>
 
       <div className="footer"></div>
-      
-
     </>
   )
 }

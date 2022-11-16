@@ -14,7 +14,7 @@ export const failure = (args) => {
 }
 
 export const success = (args) => {
-  return Success ? <Success {...standard()} {...args} /> : <></>
+  return Success ? <Success appointments={standard().appointments} /> : <></>
 }
 
 export default { title: 'Cells/AppointmentListsCell' }
