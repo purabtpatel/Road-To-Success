@@ -13,3 +13,9 @@ created daily view of calendar including timeblocking and to-do lists
 
 - sticky note
     - can include reminders for day
+
+11/8
+    -inserted the header with date and time
+
+11/16
+    -
