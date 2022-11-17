@@ -1,7 +1,7 @@
 export const schema = gql`
   type Task {
     id: Int!
-    user_id: Int
+    user_id: Int!
     status_id: Int!
     title: String
     details: String
@@ -12,7 +12,7 @@ export const schema = gql`
   }
 
   type Query {
-    tasks: [Task!]! @requireAuth
+    tasks(user_id: Int!): [Task!]! @requireAuth
     task(id: Int!): Task @requireAuth
   }
 
