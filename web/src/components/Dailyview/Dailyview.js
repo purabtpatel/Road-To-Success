@@ -1,7 +1,7 @@
 //import chakra heading
 import { Heading } from '@chakra-ui/react'
-//import checkbox
-import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
+//import textarea - stickynote
+import { Textarea } from '@chakra-ui/react'
 
 //function for date and time display
 function callDateTime() {
@@ -13,7 +13,7 @@ setInterval(function () {
   callDateTime()
 }, 1000)
 
-//to-do/checklist display
+//stickynote
 
 //displays to screen
 const Dailyview = () => {
@@ -23,7 +23,7 @@ const Dailyview = () => {
         <p id="watch"></p>
       </Heading>
       <p>{'Start the day off right!'}</p>
-      <Checkbox defaultChecked>Checkbox</Checkbox>
+      <Textarea placeholder="notes" />
     </div>
   )
 }

@@ -14,8 +14,11 @@ created daily view of calendar including timeblocking and to-do lists
 - sticky note
     - can include reminders for day
 
-11/8
-    -inserted the header with date and time
+    - familiarized using chakra
+    - created daily view component
+    - inserted the header with date and time
+    - added notes bar
 
-11/16
-    -
+    to do:
+        - add time blocking schedule
+        - edit format
