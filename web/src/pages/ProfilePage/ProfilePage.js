@@ -36,7 +36,7 @@ const ProfilePage = () => {
                         <form>
                            
                             <div class="mb-3">
-                                <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
+                                <label class="small mb-1" for="inputUsername">Username </label>
                                 <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username"/>
                             </div>
                             
@@ -60,29 +60,21 @@ const ProfilePage = () => {
                                     <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap"/>
                                 </div>
                                 
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputLocation">Location</label>
-                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA"/>
-                                </div>
                             </div>
                            
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputEmailAddress">Email address</label>
                                 <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com"/>
                             </div>
-                          
-                            <div class="row gx-3 mb-3">
-                                
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputPhone">Phone number</label>
-                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567"/>
-                                </div>
-                              
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988"/>
-                                </div>
+
+                            <div class="myselect">
+                                    <select class="stick-Right" type = "upcoming-drop-Select-two" name="all-proxies" id="upcoming-drop-Select">
+                                        <option value="Dark Theme">Dark Theme</option>
+                                        <option value="Light Theme">Light Theme</option>
+                                      </select>
                             </div>
+                          
+                           
                             
                             <button class="btn btn-primary" type="button">Save changes</button>
                         </form>
