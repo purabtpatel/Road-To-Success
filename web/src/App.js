@@ -33,12 +33,12 @@ function App() {
 
   return (
     <div>
-      <h2>React Google Login</h2>
+      <h2>Your road to success starts here!</h2>
       <br />
       <br />
       {profile ? (
         <div>
-          <img src={profile.imageUrl} alt="user image" />
+          <img src={profile.imageUrl} alt="user" />
           <h3>User Logged in</h3>
           <p>Name: {profile.name}</p>
           <p>Email Address: {profile.email}</p>
