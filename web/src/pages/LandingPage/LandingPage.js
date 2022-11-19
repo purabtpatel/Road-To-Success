@@ -4,9 +4,8 @@ import { Helmet } from '@redwoodjs/web'
 const LandingPage = () => {
   return (
     <>
-    <Helmet bodyAttributes={{ style: 'background-color: #717891' }} />
+      <Helmet bodyAttributes={{ style: 'background-color: #717891' }} />
       <header>
-
         <div className="navigation">
           <nav>
             <ul>
@@ -31,7 +30,6 @@ const LandingPage = () => {
           <span id="your">your</span> way
         </h1>
       </div>
-
     </>
   )
 }
