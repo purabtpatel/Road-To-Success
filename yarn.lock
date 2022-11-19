@@ -8503,6 +8503,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react@npm:*":
+  version: 18.0.25
+  resolution: "@types/react@npm:18.0.25"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 5d30dbf46124a63ee832864bf38ce42de2e8924dc53470f14742343503a2cf1851b6b4f8b892ef661e1a670561f4c9052d782e419d314912e54626f3296e49b6
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:17.0.50":
   version: 17.0.50
   resolution: "@types/react@npm:17.0.50"
@@ -15355,6 +15366,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gapi-script@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "gapi-script@npm:1.2.0"
+  checksum: 8b809c9d5cc54170ecf3eb461319ea3e3ef1355cf781d112fbe0270e2a9ce2c93372c71629bbd7b3b16659965f1b3b5b0994155c1777a13e731b20cbb78991d3
+  languageName: node
+  linkType: hard
+
 "gauge@npm:^3.0.0":
   version: 3.0.2
   resolution: "gauge@npm:3.0.2"
@@ -21709,7 +21727,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.8.1, prop-types@npm:^15.0.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:15.8.1, prop-types@npm:^15.0.0, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -22100,6 +22118,19 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 27df50d7265f9ace2d6354894fb77c5d32f18b1c6cee6c8da1fa004620cadc134181956dc218fab04cdd6c4822ae49c6eb4eca69fd6543b6790c85a16a8df3b8
+  languageName: node
+  linkType: hard
+
+"react-google-login@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "react-google-login@npm:5.2.2"
+  dependencies:
+    "@types/react": "*"
+    prop-types: ^15.6.0
+  peerDependencies:
+    react: ^16 || ^17
+    react-dom: ^16 || ^17
+  checksum: 8372751979d5e881fd0ea719547a3d346e74e90b301af0a48db3fdbf23680859a556cb7a16e017823fcf62701f6fd6b9d5ca52c2150322fcb60017ac6f959769
   languageName: node
   linkType: hard
 
@@ -22957,6 +22988,8 @@ __metadata:
     "@emotion/styled": ^11.10.5
     "@redwoodjs/core": 3.2.0
     framer-motion: ^7.6.2
+    gapi-script: ^1.2.0
+    react-google-login: ^5.2.2
   languageName: unknown
   linkType: soft
 

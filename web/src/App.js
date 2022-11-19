@@ -1,50 +1,66 @@
-import { Auth0Client } from '@auth0/auth0-spa-js'
-import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react'
-import * as theme from 'config/chakra.config'
+/*App.js*/
 
-import { AuthProvider } from '@redwoodjs/auth'
-import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import React, { useState, useEffect } from 'react'
 
-import FatalErrorPage from 'src/pages/FatalErrorPage'
-import Routes from 'src/Routes'
+import { gapi } from 'gapi-script'
+import { GoogleLogin, GoogleLogout } from 'react-google-login'
 
-import './index.css'
+function App() {
+  const [profile, setProfile] = useState([])
+  const clientId =
+    '1027630562583-sn9u8us2achggafu7pooti5ojjjgvodv.apps.googleusercontent.com'
+  useEffect(() => {
+    const initClient = () => {
+      gapi.client.init({
+        clientId: clientId,
+        scope: '',
+      })
+    }
+    gapi.load('client:auth2', initClient)
+  })
 
-const auth0 = new Auth0Client({
-  domain: process.env.AUTH0_DOMAIN,
-  client_id: process.env.AUTH0_CLIENT_ID,
-  redirect_uri: process.env.AUTH0_REDIRECT_URI,
+  const onSuccess = (res) => {
+    setProfile(res.profileObj)
+  }
 
-  // ** NOTE ** Storing tokens in browser local storage provides persistence across page refreshes and browser tabs.
-  // However, if an attacker can achieve running JavaScript in the SPA using a cross-site scripting (XSS) attack,
-  // they can retrieve the tokens stored in local storage.
-  // https://auth0.com/docs/libraries/auth0-spa-js#change-storage-options
-  cacheLocation: 'localstorage',
-  audience: process.env.AUTH0_AUDIENCE,
+  const onFailure = (err) => {
+    console.log('failed', err)
+  }
 
-  // @MARK: useRefreshTokens is required for automatically extending sessions
-  // beyond that set in the initial JWT expiration.
-  //
-  // @MARK: https://auth0.com/docs/tokens/refresh-tokens
-  // useRefreshTokens: true,
-})
+  const logOut = () => {
+    setProfile(null)
+  }
 
-const extendedTheme = extendTheme(theme)
-
-const App = () => (
-  <FatalErrorBoundary page={FatalErrorPage}>
-    <AuthProvider client={auth0} type="auth0">
-      <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
-        <ColorModeScript />
-        <ChakraProvider theme={extendedTheme}>
-          <RedwoodApolloProvider>
-            <Routes />
-          </RedwoodApolloProvider>
-        </ChakraProvider>
-      </RedwoodProvider>
-    </AuthProvider>
-  </FatalErrorBoundary>
-)
-
+  return (
+    <div>
+      <h2>React Google Login</h2>
+      <br />
+      <br />
+      {profile ? (
+        <div>
+          <img src={profile.imageUrl} alt="user image" />
+          <h3>User Logged in</h3>
+          <p>Name: {profile.name}</p>
+          <p>Email Address: {profile.email}</p>
+          <br />
+          <br />
+          <GoogleLogout
+            clientId={clientId}
+            buttonText="Log out"
+            onLogoutSuccess={logOut}
+          />
+        </div>
+      ) : (
+        <GoogleLogin
+          clientId={clientId}
+          buttonText="Sign in with Google"
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiePolicy={'single_host_origin'}
+          isSignedIn={true}
+        />
+      )}
+    </div>
+  )
+}
 export default App
