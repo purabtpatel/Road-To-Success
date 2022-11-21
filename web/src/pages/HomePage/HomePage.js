@@ -1,8 +1,8 @@
+/* eslint-disable react/jsx-no-undef */
 import { MetaTags } from '@redwoodjs/web'
 import { Helmet } from '@redwoodjs/web'
 
 import AppointmentItem from 'src/components/AppointmentItem/AppointmentItem'
-
 
 const HomePage = () => {
   return (
