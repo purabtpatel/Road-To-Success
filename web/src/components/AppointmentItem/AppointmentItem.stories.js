@@ -12,7 +12,7 @@
 import AppointmentItem from './AppointmentItem'
 
 export const generated = () => {
-  return <AppointmentItem />
+  return <AppointmentItem title='My class' duration='20' />
 }
 
 export default {
