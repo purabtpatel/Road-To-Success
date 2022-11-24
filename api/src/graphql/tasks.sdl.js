@@ -14,6 +14,8 @@ export const schema = gql`
   type Query {
     tasks(user_id: Int!): [Task!]! @requireAuth
     task(id: Int!): Task @requireAuth
+    getUserTasksOfUrgency(user_id: Int!, urgency: Int!): [Task!]! @requireAuth
+    getUserTasksOfPriority(user_id: Int!, priority: Int!): [Task!]! @requireAuth
   }
 
   input CreateTaskInput {
