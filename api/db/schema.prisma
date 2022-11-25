@@ -18,7 +18,14 @@ model User {
   createdAt   DateTime      @default(now())
   Task        Task[]
   Appointment Appointment[]
+  email               String  @unique
+  hashedPassword      String
+  salt                String
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
+  tokens              String?
 }
+
 
 model Task {
   id        Int      @id @default(autoincrement())
