@@ -24,10 +24,14 @@ const LandingPage = () => {
                 {isAuthenticated
                   ? (currentUser && !currentUser.gCalSyncEnabled 
                     ? <><Button style={{color: "black"}} onClick={() => authorizeApp()}>Sync with Google 📅 </Button> <Button style={{color: "black"}} onClick={logOut}>Log Out 👋</Button></>
-                    : <Button style={{color: "black"}} onClick={logOut}>Log Out</Button>)
-                  : <Link to={routes.login()}><Button style={{color: "black"}}>Log In 🔥</Button></Link>
+                    : <Button style={{color: "black"}} onClick={logOut}>Log Out 👋</Button>)
+                  : <Link to={routes.login()}><Button style={{color: "black"}}>Log In 🖋</Button></Link>
                 }
               </li>
+              {currentUser
+              ? <li style={{fontSize: "1.7rem",fontWeight: "800"}}>{`Signed in as ${currentUser.email}`}</li>
+              : null
+              }
             </ul>
           </nav>
         </div>

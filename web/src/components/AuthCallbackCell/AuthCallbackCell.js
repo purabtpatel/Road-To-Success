@@ -6,16 +6,21 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => {
+  return <div>Loading...</div>
+}
 
-export const Empty = () => <div></div>
+export const Empty = () => {
+	return <div></div>
+}
 
-export const Failure = ({ error }) => (
-  <div style={{ color: 'red' }}>Error: {error?.message}</div>
-)
+export const Failure = ({ error }) => {
+  return <div style={{ color: 'red' }}>Error: {error?.message}</div>
+}
+
 
 export const Success = ({authCallback}) => {
-  alert(`result=${authCallback.result}`)
+  //alert(`authCallbackCell: result=${authCallback.result}`)
   window.location.href = window.location.origin
   return <div></div>
 }
