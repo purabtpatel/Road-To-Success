@@ -9,7 +9,7 @@ import { MetaTags } from '@redwoodjs/web'
 import { Helmet } from '@redwoodjs/web'
 
 const LandingPage = () => {
-  const [profile, setProfile] = useState([])
+  const [profile, setProfile] = useState(null)
   const clientId =
     '1027630562583-sn9u8us2achggafu7pooti5ojjjgvodv.apps.googleusercontent.com'
   useEffect(() => {
