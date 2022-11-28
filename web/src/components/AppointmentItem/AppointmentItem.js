@@ -1,12 +1,42 @@
-const AppointmentItem = () => {
-  return (
-    <div className="appointmentItem">
-      <h2 className="innertext title ">{'Title:'}</h2>
-      <p className="innertext duration">{'Duration:'}</p>
-      <div className="mini-horizontal-bar"></div>
-    </div>
+import { Flex } from "@chakra-ui/react"
+import { Redirect } from "@redwoodjs/router"
 
-  )
+const AppointmentItem = ({id, title, startTime, duration, viewType}) => {
+  if(viewType === 'monthly') {
+    return (
+      <div>
+        <h2>{title}</h2>
+        <p>{startTime}</p>
+        <p>{duration}</p>
+        <p>{id}</p>
+      </div>
+    )
+  }
+  else if(viewType === 'weekly') {
+    return (
+      <div>
+        <h2>{title}</h2>
+        <p>{startTime}</p>
+        <p>{duration}</p>
+        <p>{id}</p>
+      </div>
+    )
+  }
+  else if(viewType === 'daily') {
+    return (
+      //<Flex>{id}</Flex>
+      <Flex direction='row' justifyContent='space-between' background={'gray.50'} p={1} rounded={6} height={duration/5}>
+        <h2>{title}</h2>
+        <Flex>{startTime}</Flex>
+        <Flex>{duration}</Flex>
+      </Flex>
+    )
+  }
+  else {
+    return (
+      <div>ViewType missing</div>
+    )
+  }
 }
 
 export default AppointmentItem
