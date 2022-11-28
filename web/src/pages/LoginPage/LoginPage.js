@@ -1,5 +1,9 @@
 import { useRef } from 'react'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+
+import { gapi } from 'gapi-script'
+import { GoogleLogin, GoogleLogout } from 'react-google-login'
 
 import { useAuth } from '@redwoodjs/auth'
 import {
@@ -15,6 +19,27 @@ import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
 const LoginPage = () => {
+  const [profile, setProfile] = useState(null)
+  const clientId =
+    '1027630562583-sn9u8us2achggafu7pooti5ojjjgvodv.apps.googleusercontent.com'
+  useEffect(() => {
+    const initClient = () => {
+      gapi.client.init({
+        clientId: clientId,
+        scope: '',
+      })
+    }
+    gapi.load('client:auth2', initClient)
+  })
+
+  const onSuccess = (res) => {
+    setProfile(res.profileObj)
+  }
+
+  const onFailure = (err) => {
+    console.log('failed', err)
+  }
+
   const { isAuthenticated, logIn } = useAuth()
 
   useEffect(() => {
@@ -29,7 +54,7 @@ const LoginPage = () => {
   }, [])
 
   const onSubmit = async (data) => {
-    const response = await logIn({ ...data });
+    const response = await logIn({ ...data })
 
     if (response.message) {
       toast(response.message)
@@ -112,6 +137,14 @@ const LoginPage = () => {
                     <Submit className="rw-button rw-button-blue">Login</Submit>
                   </div>
                 </Form>
+                <GoogleLogin
+                  clientId={clientId}
+                  buttonText="Sign in with Google"
+                  onSuccess={onSuccess}
+                  onFailure={onFailure}
+                  cookiePolicy={'single_host_origin'}
+                  isSignedIn={true}
+                />
               </div>
             </div>
           </div>
