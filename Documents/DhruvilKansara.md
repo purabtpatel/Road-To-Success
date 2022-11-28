@@ -9,3 +9,15 @@ Did a bunch of reading on auth0.
 Set up auth0 in a separate branch yesterday(10/29)
 
 Today on 10/30 team security will hop on and put the finishing touches on auth0. Get a home page up and running, get login and registration done(10/30)
+
+Restarted our stuff from square 1 since we decided having two logins was kind of dumb
+
+Week of 11/7 basically just struggled
+
+Week of 11/14 we met with purab and figured out how it would work and actually got a login page up and running but it was in ts not js so uhhh yeah
+11/17 got the js login stuff working
+
+week of 11/21 i got the login button onto the landing page. it doesnt show logout or the user pfp like it should but eh nbd
+11/23 started registration stuff
+
+11/24 did nothing cuz thanksgiving duh

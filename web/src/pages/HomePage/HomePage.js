@@ -1,7 +1,13 @@
+/* 
 import { GoogleLogin } from '@react-oauth/google'
 
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
+
+import { MetaTags } from '@redwoodjs/web'
+import { Helmet } from '@redwoodjs/web'
+
+import AppointmentItem from 'src/components/AppointmentItem/AppointmentItem'
 
 const HomePage = () => {
   return (
@@ -29,4 +35,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default HomePage */
