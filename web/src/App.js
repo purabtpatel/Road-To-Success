@@ -1,3 +1,4 @@
+/*App.js*/
 import { AuthProvider } from '@redwoodjs/auth'
 
 import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react'
@@ -10,8 +11,6 @@ import Routes from 'src/Routes'
 
 
 import './scaffold.css'
-import './index.css'
-
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
@@ -26,6 +25,5 @@ const App = () => (
     </RedwoodProvider>
   </FatalErrorBoundary>
 )
-
 export default App
 
