@@ -11,6 +11,14 @@ export const task = ({ id }) => {
     where: { id },
   })
 }
+export const allTasks = () => {
+  return db.task.findMany()
+}
+export const getByDate = ({ user_id, date }) => {
+  return db.task.findMany({
+    where: { user_id, date },
+  })
+}
 
 export const createTask = ({ input }) => {
   return db.task.create({
@@ -39,13 +47,12 @@ export const Task = {
 
 export const getUserTasksOfUrgency = ({ user_id, urgency }) => {
   return db.task.findMany({
-    where: { user_id, urgency }
+    where: { user_id, urgency },
   })
 }
 
-
 export const getUserTasksOfPriority = ({ user_id, priority }) => {
   return db.task.findMany({
-    where: { user_id, priority }
-   })
+    where: { user_id, priority },
+  })
 }
