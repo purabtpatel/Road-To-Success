@@ -25,10 +25,6 @@ const LandingPage = () => {
                 <Link to={routes.home()}>Home</Link>
               </li>
               <li>
-                <Link to={routes.home()}>Sign Up</Link>
-              </li>
-              <li>
-                <Link to={routes.home()}>Log In</Link>
                 {isAuthenticated ? (
                   currentUser && !currentUser.gCalSyncEnabled ? (
                     <>
@@ -63,13 +59,6 @@ const LandingPage = () => {
         </div>
       </header>
       <div className="horizontal-bar"></div>
-      <div className="heading">
-        <h1>
-          {' '}
-          Manage <span id="your">your</span> tasks,<br></br>{' '}
-          <span id="your">your</span> way
-        </h1>
-      </div>
       {!currentUser || !currentUser.gCalSyncEnabled ? (
         <div className="heading">
           <h1>
