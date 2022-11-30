@@ -22,7 +22,7 @@ const LandingPage = () => {
           <nav>
             <ul>
               <li>
-                <Link to={routes.home()}>Home</Link>
+                <Link to={routes.landingPage()}>Home</Link>
               </li>
               <li>
                 {isAuthenticated ? (
