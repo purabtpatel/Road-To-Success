@@ -21,7 +21,7 @@ import { toast, Toaster } from '@redwoodjs/web/toast'
 const LoginPage = () => {
   const [profile, setProfile] = useState(null)
   const clientId =
-    '1027630562583-sn9u8us2achggafu7pooti5ojjjgvodv.apps.googleusercontent.com'
+    process.env.CLIENT_ID;
   useEffect(() => {
     const initClient = () => {
       gapi.client.init({
@@ -34,6 +34,7 @@ const LoginPage = () => {
 
   const onSuccess = (res) => {
     setProfile(res.profileObj)
+    console.log('Login Success: currentUser:', res.profileObj)
   }
 
   const onFailure = (err) => {
