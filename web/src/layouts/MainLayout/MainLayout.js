@@ -2,7 +2,7 @@
 import { useAuth } from '@redwoodjs/auth'
 const MainLayout = ({ children }) => {
   /*** get necessary properties from useAuth() ***/
-  const { logIn, logOut, isAuthenticated, userMetadata } = useAuth()
+
   return (
     <>
       <div className="dark:bg-gray-800 font-mono bg-white relative overflow-hidden h-screen">
