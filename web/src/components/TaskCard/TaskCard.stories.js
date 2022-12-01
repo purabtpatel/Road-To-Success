@@ -3,19 +3,20 @@
 //
 // ```jsx
 // export const generated = (args) => {
-//   return <AppointmentItem {...args} />
+//   return <TaskCard {...args} />
 // }
 // ```
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import AppointmentItem from './AppointmentItem'
+import TaskCard from './TaskCard'
 
 export const generated = () => {
-  return <AppointmentItem title='My class' duration='20' />
+  var task = {status: 'Started', title: 'Code', urgency: "High", priority: 1};
+  return <TaskCard task={task} />
 }
 
 export default {
-  title: 'Components/AppointmentItem',
-  component: AppointmentItem,
+  title: 'Components/TaskCard',
+  component: TaskCard,
 }

@@ -3,19 +3,19 @@
 //
 // ```jsx
 // export const generated = (args) => {
-//   return <AppointmentItem {...args} />
+//   return <TaskView {...args} />
 // }
 // ```
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import AppointmentItem from './AppointmentItem'
+import TaskView from './TaskView'
 
 export const generated = () => {
-  return <AppointmentItem title='My class' duration='20' />
+  return <TaskView />
 }
 
 export default {
-  title: 'Components/AppointmentItem',
-  component: AppointmentItem,
+  title: 'Components/TaskView',
+  component: TaskView,
 }
