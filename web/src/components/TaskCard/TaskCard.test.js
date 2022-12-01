@@ -1,14 +1,14 @@
 import { render } from '@redwoodjs/testing/web'
 
-import HomePage from './HomePage'
+import TaskCard from './TaskCard'
 
 //   Improve this test with help from the Redwood Testing Doc:
-//   https://redwoodjs.com/docs/testing#testing-pages-layouts
+//    https://redwoodjs.com/docs/testing#testing-components
 
-describe('HomePage', () => {
+describe('TaskCard', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<HomePage />)
+      render(<TaskCard />)
     }).not.toThrow()
   })
 })
