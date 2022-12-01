@@ -1,14 +1,14 @@
 import { render } from '@redwoodjs/testing/web'
 
-import Dailyview from './Dailyview'
+import BlogLayout from './BlogLayout'
 
 //   Improve this test with help from the Redwood Testing Doc:
-//    https://redwoodjs.com/docs/testing#testing-components
+//   https://redwoodjs.com/docs/testing#testing-pages-layouts
 
-describe('Dailyview', () => {
+describe('BlogLayout', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<Dailyview />)
+      render(<BlogLayout />)
     }).not.toThrow()
   })
 })

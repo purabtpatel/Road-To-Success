@@ -1,5 +1,4 @@
-/*App.js*/
-
+import { Auth0Client } from '@auth0/auth0-spa-js'
 import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import * as theme from 'config/chakra.config'
@@ -7,23 +6,48 @@ import * as theme from 'config/chakra.config'
 import { AuthProvider } from '@redwoodjs/auth'
 import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-import './index.css'
+
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
 
-import './scaffold.css'
+import './index.css'
+
+const auth0 = new Auth0Client({
+  domain: process.env.AUTH0_DOMAIN,
+  client_id: process.env.AUTH0_CLIENT_ID,
+  redirect_uri: process.env.AUTH0_REDIRECT_URI,
+
+  // ** NOTE ** Storing tokens in browser local storage provides persistence across page refreshes and browser tabs.
+  // However, if an attacker can achieve running JavaScript in the SPA using a cross-site scripting (XSS) attack,
+  // they can retrieve the tokens stored in local storage.
+  // https://auth0.com/docs/libraries/auth0-spa-js#change-storage-options
+  cacheLocation: 'localstorage',
+  audience: process.env.AUTH0_AUDIENCE,
+
+  // @MARK: useRefreshTokens is required for automatically extending sessions
+  // beyond that set in the initial JWT expiration.
+  //
+  // @MARK: https://auth0.com/docs/tokens/refresh-tokens
+  // useRefreshTokens: true,
+})
+
+const extendedTheme = extendTheme(theme)
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
-      <AuthProvider type="dbAuth">
-        <ChakraProvider theme={extendTheme(theme)}>
-          <RedwoodApolloProvider>
-            <Routes />
-          </RedwoodApolloProvider>
-        </ChakraProvider>
+    <GoogleOAuthProvider clientId="485958325211-1ui8sbsljohi8n275b9jth7sv6qlrabh.apps.googleusercontent.com">
+      <AuthProvider client={auth0} type="auth0">
+        <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+          <ColorModeScript />
+          <ChakraProvider theme={extendedTheme}>
+            <RedwoodApolloProvider>
+              <Routes />
+            </RedwoodApolloProvider>
+          </ChakraProvider>
+        </RedwoodProvider>
       </AuthProvider>
-    </RedwoodProvider>
+    </GoogleOAuthProvider>
   </FatalErrorBoundary>
 )
+
 export default App
