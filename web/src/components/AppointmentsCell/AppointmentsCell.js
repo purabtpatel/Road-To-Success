@@ -32,7 +32,7 @@ export const Success = ({ getEvents }) => {
     const elements = document.getElementsByClassName('animateIn')
     for(const element of elements){
       //element.animate([{transform: 'scale(0.01)'},{transform: 'scale(1.0) skewX(-10deg)'}], {duration: 1000, iterations: 1})
-      element.style.transition = `all ${Math.random()}s cubic-bezier(0.76, 0.75, 0.06, 1.16)` 
+      element.style.transition = `all ${Math.random()}s cubic-bezier(0.76, 0.75, 0.06, 1.16)`
       element.style.transform = "scale(1) skewX(-10deg)"
     }
   }, []);

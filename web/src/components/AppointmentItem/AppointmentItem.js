@@ -25,7 +25,7 @@ const AppointmentItem = ({id, title, startTime, duration, viewType}) => {
   else if(viewType === 'daily') {
     return (
       //<Flex>{id}</Flex>
-      <Flex direction='row' justifyContent='space-between' background={'gray.50'} p={1} rounded={6} height={duration/5}>
+      <Flex direction='row' background={'gray.50'} p={1} rounded={6} height={duration/5}>
         <h2>{title}</h2>
         <Flex>{startTime}</Flex>
         <Flex>{duration}</Flex>

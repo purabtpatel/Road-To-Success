@@ -15,15 +15,11 @@ const authorizeApp = () => {
 const LandingPage = () => {
   const { isAuthenticated, currentUser, logOut } = useAuth()
   return (
-    <>
-      <Helmet bodyAttributes={{ style: 'background-color: #717891' }} />
+    <div className='LandingPage'>
       <header>
         <div className="navigation">
           <nav>
             <ul>
-              <li>
-                <Link to={routes.landingPage()}>Home</Link>
-              </li>
               <li>
                 {isAuthenticated ? (
                   currentUser && !currentUser.gCalSyncEnabled ? (
@@ -54,6 +50,10 @@ const LandingPage = () => {
                   style={{ fontSize: '1.7rem', fontWeight: '800' }}
                 >{`Signed in as ${currentUser.email}`}</li>
               ) : null}
+
+              <li style={{float:'left', display:'inline', padding:'15px 32px', fontSize:'40px'}}>
+                <Link to={routes.landingPage()}>Home</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -78,7 +78,7 @@ const LandingPage = () => {
       ) : (
         <div></div>
       )}
-    </>
+    </div>
   )
 }
 
