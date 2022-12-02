@@ -30,6 +30,8 @@ const LandingPage = () => {
           <nav>
             <ul>
               <li>
+              </li>
+              <li>
                 {isAuthenticated ? (
                   currentUser && !currentUser.gCalSyncEnabled ? (
                     <>
