@@ -53,6 +53,7 @@ const LandingPage = () => {
                 >{`Signed in as ${currentUser.email}`}</li>
               ) : null}
 
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -72,7 +73,9 @@ const LandingPage = () => {
                   fontSize: '40px',
                 }}
               >
-                <Link to={routes.landingPage()}>Home</Link>
+              <li style={{ float: 'left', display: 'inline', padding: '20px 32px', fontSize: '30px'}}>
+                <Link to={routes.landingPage()}>Road to Success</Link>
+
               </li>
             </ul>
           </nav>
