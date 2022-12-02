@@ -53,8 +53,8 @@ const LandingPage = () => {
                 >{`Signed in as ${currentUser.email}`}</li>
               ) : null}
 
-              <li style={{ float: 'left', display: 'inline', padding: '15px 32px', fontSize: '40px' }}>
-                <Link to={routes.landingPage()}>Home</Link>
+              <li style={{ float: 'left', display: 'inline', padding: '20px 32px', fontSize: '30px'}}>
+                <Link to={routes.landingPage()}>Road to Success</Link>
               </li>
             </ul>
           </nav>
