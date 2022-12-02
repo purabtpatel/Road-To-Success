@@ -1,10 +1,15 @@
-import { nominalTypeHack } from "prop-types"
 import TaskCard from "../TaskCard/TaskCard"
 
 export const QUERY = gql`
-  query TasksQuery {
-    tasks{
+  query FindTaskQuery($user_id: Int!) {
+    tasks(user_id: $user_id) {
       id
+      user_id
+      title
+      details
+      status_id
+      urgency
+      priority
     }
   }
 `
@@ -19,7 +24,7 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ tasks }) => {
   return (
-    <ul style={{ 'list-style-type': 'none' }}>
+    <ul style={{ listStyleType: 'none' }}>
       {tasks.map((item) => {
         return <li key={item.id}><TaskCard task={item} /></li>
       })}

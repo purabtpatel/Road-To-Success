@@ -41,9 +41,9 @@ vec3(86/255, 192/255, 245/255),
    text-decoration: none;
    font-family: "Josefin", Sans-serif;
  } */
-
+/* rgb(86, 192, 245) */
  .LandingPage {
-   background: rgb(86, 192, 245);
+   background: rgb(209, 253, 255);
    color: white;
 
    justify-content: center;

@@ -7,6 +7,7 @@ import { MetaTags } from '@redwoodjs/web'
 import { Helmet } from '@redwoodjs/web'
 
 import AppointmentsCell from 'src/components/AppointmentsCell'
+import TasksCell from 'src/components/TasksCell'
 import TaskView from 'src/components/TaskView/TaskView'
 
 const authorizeApp = () => {
@@ -72,12 +73,13 @@ const LandingPage = () => {
         <div></div>
       )}
       {isAuthenticated && currentUser && currentUser.gCalSyncEnabled ? (
-        <div style={{display: 'block'}}>
-          <AppointmentsCell
+        <div style={{display: 'block', height:'100vh'}}>
+          {/* <AppointmentsCell
             start={'2021-11-01T12:00:00Z'}
             end={'2023-11-01T12:00:00Z'}
-          />
-          <TaskView />
+          /> */}
+          {/* <TaskCell user_id={currentUser.id} /> */}
+          <TaskView user_id={currentUser.id} />
         </div>
       ) : (
         <div></div>

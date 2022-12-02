@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import TasksCell from 'src/components/TasksCell'
 import { Box, Divider, Flex } from "@chakra-ui/react"
-const TaskView = () => {
+const TaskView = ({user_id}) => {
   // current date state
+  const color = 'rgb(255,255,255)';
   let today = new Date();
   let dd = String(today.getDate()).padStart(2, '0');
   let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -53,15 +54,15 @@ const TaskView = () => {
   return (
     <>
       {/* alligned horizontally */}
-      <Flex alignItems='center' justifyContent='center' lineHeight={1.5} >
-        <Flex direction='column' background='gray.50' p={12} rounded={6}>
+      <Flex alignItems='center' justifyContent='center' lineHeight={1.5} color="black" >
+        <Flex direction='column' background={color} p={12} rounded={6}>
           <Box fontSize='2xl'>
             <Flex justifyContent='space-between' >
               <h1>To Do List</h1>
               {/* input for date */}
               <div>
                 <button onClick={() => handleDateChange(-1)}>&lt;</button>
-                <input style={{ 'background-color': 'rgb(248,250,252)' }} type="date" id='dateinput' value={htmlDate(date)} onChange={(e) => {
+                <input style={{ backgroundColor: color }} type="date" id='dateinput' value={htmlDate(date)} onChange={(e) => {
                   let newDate = e.target.value.split("-"); //split date into array
                   let newDateString = newDate[1] + "-" + newDate[2] + "-" + newDate[0]; //rearrange array into string
                   setDate(newDateString); //set date state to new date
@@ -74,7 +75,7 @@ const TaskView = () => {
           <Divider />
 
 
-          <TasksCell />
+          <TasksCell user_id={user_id}/>
           {/* display current date */}
           <p>{date}</p>
         </Flex>
