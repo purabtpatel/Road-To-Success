@@ -23,3 +23,10 @@ Run:
 ```
 yarn rw dev
 ```
+
+For ParticlesJs
+
+yarn add react-particles
+yarn add tsparticles
+yarn add tsparticles-engine
+

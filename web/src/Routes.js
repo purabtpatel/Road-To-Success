@@ -2,6 +2,7 @@ import { Router, Route } from '@redwoodjs/router'
 
 const Routes = () => {
   return (
+
     <Router>
       <Route path="/authcallback" page={AuthCallbackPage} name="authCallback" />
       <Route path="/login" page={LoginPage} name="login" />

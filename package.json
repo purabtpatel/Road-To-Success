@@ -30,6 +30,9 @@
     "framer-motion": "^7.6.2",
     "gapi-script": "^1.2.0",
     "googleapis": "105",
-    "react-google-login": "^5.2.2"
+    "react-google-login": "^5.2.2",
+    "react-particles": "^2.5.3",
+    "tsparticles": "^2.5.3",
+    "tsparticles-engine": "^2.5.2"
   }
 }
