@@ -14,7 +14,9 @@
 
  }
 
- nav li {}
+ nav li {
+  
+ }
 
  nav li {
    float: right;
@@ -108,6 +110,10 @@ vec3(86/255, 192/255, 245/255),
 
  #redwood-app {
    overflow: hidden;
+ }
+ .bi{
+
+
  }
 
  /*

@@ -17,7 +17,7 @@ const authorizeApp = () => {
 const LandingPage = () => {
   const { isAuthenticated, currentUser, logOut } = useAuth()
   return (
-    <div className='LandingPage'>
+    <div className="LandingPage">
       <header>
         <div className="navigation">
           <nav>
@@ -53,7 +53,25 @@ const LandingPage = () => {
                 >{`Signed in as ${currentUser.email}`}</li>
               ) : null}
 
-              <li style={{ float: 'left', display: 'inline', padding: '15px 32px', fontSize: '40px' }}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="currentColor"
+                className="bi bi-calendar-check-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
+              </svg>
+
+              <li
+                style={{
+                  float: 'left',
+                  display: 'inline',
+                  padding: '15px 32px',
+                  fontSize: '40px',
+                }}
+              >
                 <Link to={routes.landingPage()}>Home</Link>
               </li>
             </ul>
@@ -73,7 +91,7 @@ const LandingPage = () => {
         <div></div>
       )}
       {isAuthenticated && currentUser && currentUser.gCalSyncEnabled ? (
-        <div style={{display: 'block', height:'100vh'}}>
+        <div style={{ display: 'block', height: '100vh' }}>
           {/* <AppointmentsCell
             start={'2021-11-01T12:00:00Z'}
             end={'2023-11-01T12:00:00Z'}
