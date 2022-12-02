@@ -18,6 +18,8 @@ const TaskCard = ({ task }) => {
   }
   const [statusText, setStatusText] = useState(task.status_id);
   const [statusColor, setStatusColor] = useState(initColor);
+  const [urgencyText, setUrgencyText] = useState(task.urgency);
+  const [priorityText, setPriorityText] = useState(task.priority);
 
   function handleStatusClick() {
     if (statusText == 1) { //not started
@@ -44,17 +46,23 @@ const TaskCard = ({ task }) => {
       {statusText != 5 ?
         <Flex direction='row' justifyContent='space-between' background={statusColor} p={1} rounded={6}>
           <Flex >
-            <button onClick={handleStatusClick}>{statusText}</button>
-
+            <button onClick={handleStatusClick}>{
+              statusText == 1 ? "Not Started" : statusText == 2 ? "Started" : statusText == 3 ? "Completed" : "Rolled Over"
+            }</button>
           </Flex>
           <Flex>
             {task.title}
           </Flex>
           <Flex>
-            {task.urgency}
+            <button onClick={() => setUrgencyText(urgencyText == 1 ? 2 : urgencyText == 2 ? 3 : 1)}>
+              {urgencyText == 1 ? "High" : urgencyText == 2 ? "Medium" : "Low"}
+            </button>
           </Flex>
           <Flex>
-            {task.priority}
+            <button onClick={() => setPriorityText(priorityText == 1 ? 2 : priorityText == 2 ? 3 : 1)}>
+              {priorityText}
+            </button>
+
           </Flex>
         </Flex>
       :

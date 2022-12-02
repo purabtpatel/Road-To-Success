@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import TasksCell from 'src/components/TasksCell'
 import { Box, Divider, Flex } from "@chakra-ui/react"
-const TaskView = ({user_id}) => {
+const TaskView = ({ user_id }) => {
   // current date state
   const color = 'rgb(255,255,255)';
   let today = new Date();
@@ -54,7 +54,7 @@ const TaskView = ({user_id}) => {
   return (
     <>
       {/* alligned horizontally */}
-      <Flex alignItems='center' justifyContent='center' lineHeight={1.5} color="black" >
+      <div style={{ maxWidth: '30%', color: "black", float: 'right', marginTop: '20px', marginInline: '20px' }} >
         <Flex direction='column' background={color} p={12} rounded={6}>
           <Box fontSize='2xl'>
             <Flex justifyContent='space-between' >
@@ -73,14 +73,19 @@ const TaskView = ({user_id}) => {
             </Flex>
           </Box>
           <Divider />
+          <Flex direction='row' justifyContent='space-between'>
+          <h4>Status</h4>
+          <h4>Name</h4>
+          <h4>Urgency</h4>
+          <h4>Priority</h4>
 
-
-          <TasksCell user_id={user_id}/>
+          </Flex>
+          <TasksCell user_id={user_id} />
           {/* display current date */}
           <p>{date}</p>
         </Flex>
 
-      </Flex>
+      </div>
     </>
   )
 }
