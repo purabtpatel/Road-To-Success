@@ -4,18 +4,57 @@
   */
 
 
+
+
+ /* purple : 86, 17, 57  */
+ /* lightblue : 56, 162, 215 */
+ /*
+vec3(86/255, 192/255, 245/255),
+vec3(138/255, 29/255, 89/255),
+vec3(86/255, 192/255, 245/255),
+*/
+
+ /* li:nth-child(n+1) {
+   color: var(--white--);
+   display: block;
+   align-items: baseline;
+   padding: 25px 16px;
+   text-decoration: none;
+   font-family: "Josefin", Sans-serif;
+ } */
+
+ /* rgb(86, 192, 245) */
+ .LandingPage {
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   font-family: "Josefin", Sans-serif;
+ }
+
+ .heading {
+   font-weight: 400;
+   font-size: 96px;
+   line-height: 96px;
+   font-family: "Josefin", Sans-serif;
+   padding: 22px;
+   height: 100vh;
+   background: linear-gradient(90deg,
+       rgba(255, 200, 225, .5) 0%,
+       rgba(196, 238, 254, 0.5) 100%);
+ }
+
+ .main {
+   background: linear-gradient(90deg,
+       rgba(255, 200, 225, .5) 0%,
+       rgba(196, 238, 254, 0.5) 100%);
+ }
+
  nav ul {
    list-style-type: none;
    margin: 0;
    padding: 0;
    overflow: hidden;
-   background: rgb(138, 29, 89);
-
-
- }
-
- nav li {
-  
+   background: rgb(150, 0, 70);
  }
 
  nav li {
@@ -26,49 +65,21 @@
    margin: 0 1rem;
    padding: 25px 16px;
  }
-
- /* purple : 86, 17, 57  */
- /* lightblue : 56, 162, 215 */
- /*
-vec3(86/255, 192/255, 245/255),
-vec3(138/255, 29/255, 89/255),
-vec3(86/255, 192/255, 245/255),
-*/
-
-  /* li:nth-child(n+1) {
-   color: var(--white--);
-   display: block;
-   align-items: baseline;
-   padding: 25px 16px;
-   text-decoration: none;
-   font-family: "Josefin", Sans-serif;
- } */
-/* rgb(86, 192, 245) */
- .LandingPage {
-   background: rgb(209, 253, 255);
-   color: white;
-
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   font-family: "Josefin", Sans-serif;
+.TaskView {
+    display: flex;
+    flex-direction: column;
+    float:right;
+    margin: 2rem;
+    width: 400px;
+    height: 800px;
+    font-family: "Josefin", Sans-serif;
  }
 
- .heading {
-   color: var(--white--);
-   font-weight: 400;
-   font-size: 96px;
-   line-height: 96px;
-   font-family: "Josefin", Sans-serif;
-   margin: 22px;
-   height: 100vh;
- }
 
  .horizontal-bar {
    margin: 0;
    padding: 10px 16px;
    background-color: wheat;
-
  }
 
  #your {
@@ -91,13 +102,20 @@ vec3(86/255, 192/255, 245/255),
    left: 0px;
    bottom: 0px;
    right: 0px;
-
  }
 
 
  .innertext {
    padding-left: 20px;
 
+ }
+
+ .particles {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -100;
+   color: rgb(150, 0, 70);
  }
 
  .mini-horizontal-bar {
@@ -111,10 +129,8 @@ vec3(86/255, 192/255, 245/255),
  #redwood-app {
    overflow: hidden;
  }
- .bi{
 
-
- }
+ .bi {}
 
  /*
   :root

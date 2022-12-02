@@ -13,6 +13,7 @@ import Routes from 'src/Routes'
 import './scaffold.css'
 
 const App = () => (
+
   <FatalErrorBoundary page={FatalErrorPage}>
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <AuthProvider type="dbAuth">

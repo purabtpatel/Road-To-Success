@@ -54,7 +54,7 @@ const TaskView = ({ user_id }) => {
   return (
     <>
       {/* alligned horizontally */}
-      <div style={{ maxWidth: '30%', color: "black", float: 'right', marginTop: '20px', marginInline: '20px' }} >
+      <div className='TaskView' >
         <Flex direction='column' background={color} p={12} rounded={6}>
           <Box fontSize='2xl'>
             <Flex justifyContent='space-between' >

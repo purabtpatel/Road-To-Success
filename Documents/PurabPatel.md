@@ -12,6 +12,7 @@
   - [\*11/22/22](#112222)
   - [*11/28/22*](#112822)
   - [*11/30/22*](#113022)
+  - [\*12/1/22](#12122)
 - [Current Status](#current-status)
 - [Completed Tasks](#completed-tasks)
 
@@ -87,6 +88,11 @@
 ## *11/30/22*
 - Fixed bug issues with getting rid of homepage page, the correct page is landingpage.
 - Started revamping the css file with new colors and styles that don't disrupt elements globally
+
+## *12/1/22
+- Added new css styling to reorganize styles.css
+- New color theme
+- Particles.js added to the background of landing page
 
 # Current Status
 - Working on Task View (also TasksCell and TaskCard) which will be shown in landing page
