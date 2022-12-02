@@ -12,7 +12,7 @@
 import TaskView from './TaskView'
 
 export const generated = () => {
-  return <TaskView />
+  return <TaskView user_id={1} />
 }
 
 export default {
