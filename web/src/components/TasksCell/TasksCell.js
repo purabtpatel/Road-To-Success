@@ -27,7 +27,9 @@ export const Success = ({ tasks }) => {
   return (
     <ul style={{ listStyleType: 'none' }}>
       {tasks.map((item) => {
+        if(item.status_id != 5) {
         return <li key={item.id}><TaskCard task={item} /></li>
+        }
       })}
     </ul>
   )
