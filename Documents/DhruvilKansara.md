@@ -21,3 +21,5 @@ week of 11/21 i got the login button onto the landing page. it doesnt show logou
 11/23 started registration stuff
 
 11/24 did nothing cuz thanksgiving duh
+
+Had meeting about progress. With the help of mike we have a gorgeous login and registration functionality
