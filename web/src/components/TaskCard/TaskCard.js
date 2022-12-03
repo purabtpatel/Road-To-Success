@@ -47,20 +47,20 @@ const TaskCard = ({ task }) => {
 
   useEffect(() => {
     if (isMounted.current) {
-    updateTask({
-      variables: {
-        id: task.id,
-        input: {
-          status_id: statusText,
-          urgency: urgencyText,
-          priority: priorityText
+      updateTask({
+        variables: {
+          id: task.id,
+          input: {
+            status_id: statusText,
+            urgency: urgencyText,
+            priority: priorityText
+          },
         },
-      },
-      refetchQueries: [{ query: tasksQuery }],
-    })
-  } else {
-    isMounted.current = true
-  }
+        refetchQueries: [{ query: tasksQuery }],
+      })
+    } else {
+      isMounted.current = true
+    }
   }, [statusText, urgencyText, priorityText]);
 
 
@@ -72,7 +72,6 @@ const TaskCard = ({ task }) => {
             <button onClick={() => {
               setStatusText(statusText == 1 ? 2 : statusText == 2 ? 3 : statusText == 3 ? 4 : 1);
               setStatusColor(statusText == 1 ? 'blue.100' : statusText == 2 ? 'green.100' : statusText == 3 ? 'yellow.100' : 'red.100');
-
             }}>{
                 statusText == 1 ? "Not Started" : statusText == 2 ? "Started" : statusText == 3 ? "Completed" : "Rolled Over"
               }</button>
@@ -83,7 +82,6 @@ const TaskCard = ({ task }) => {
           <Flex>
             <button onClick={() => {
               setUrgencyText(urgencyText == 1 ? 2 : urgencyText == 2 ? 3 : 1)
-
             }}>
               {urgencyText == 1 ? "High" : urgencyText == 2 ? "Medium" : "Low"}
             </button>
@@ -91,7 +89,6 @@ const TaskCard = ({ task }) => {
           <Flex>
             <button onClick={() => {
               setPriorityText(priorityText == 1 ? 2 : priorityText == 2 ? 3 : 1)
-
             }}>
               {priorityText}
             </button>
