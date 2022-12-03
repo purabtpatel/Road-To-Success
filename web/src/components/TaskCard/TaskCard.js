@@ -5,16 +5,16 @@ import React, { useState } from 'react'
 const TaskCard = ({ task }) => {
   var initColor;
   if (task.status_id == 1) { //not started
-    initColor = 'red.50';
+    initColor = 'red.100';
   }
   else if (task.status_id == 2) { //started
-    initColor = 'blue.50';
+    initColor = 'blue.100';
   }
   else if (task.status_id == 3) { //completed
-    initColor = 'green.50';
+    initColor = 'green.100';
   }
   else if (task.status_id == 4) { //rolled over
-    initColor = 'yellow.50';
+    initColor = 'yellow.100';
   }
   const [statusText, setStatusText] = useState(task.status_id);
   const [statusColor, setStatusColor] = useState(initColor);
@@ -24,19 +24,19 @@ const TaskCard = ({ task }) => {
   function handleStatusClick() {
     if (statusText == 1) { //not started
       setStatusText(2); //started
-      setStatusColor('blue.50');
+      setStatusColor('blue.100');
     }
     else if (statusText == 2) { //started
       setStatusText(3); //completed
-      setStatusColor('green.50');
+      setStatusColor('green.100');
     }
     else if (statusText == 3) { //completed
       setStatusText(4); //rolled over
-      setStatusColor('yellow.50');
+      setStatusColor('yellow.100');
     }
     else if (statusText == 4) { //rolled over
       setStatusText(1); //not started
-      setStatusColor('red.50');
+      setStatusColor('red.100');
     }
   }
 
@@ -44,7 +44,7 @@ const TaskCard = ({ task }) => {
   return (
     <>
       {statusText != 5 ?
-        <Flex direction='row' justifyContent='space-between' background={statusColor} p={1} rounded={6}>
+        <Flex direction='row' justifyContent='space-between' background={statusColor} p={1} rounded={6} margin={1}>
           <Flex >
             <button onClick={handleStatusClick}>{
               statusText == 1 ? "Not Started" : statusText == 2 ? "Started" : statusText == 3 ? "Completed" : "Rolled Over"

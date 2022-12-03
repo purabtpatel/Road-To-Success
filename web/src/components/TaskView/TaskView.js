@@ -1,7 +1,36 @@
 import React, { useState, useEffect } from 'react'
 import TasksCell from 'src/components/TasksCell'
 import { Box, Divider, Flex } from "@chakra-ui/react"
+import {FieldError, Form, Label, InputField, TextField, TextAreaField, SelectField, Submit, useForm} from '@redwoodjs/forms'
+import { MetaTags, useMutation } from '@redwoodjs/web'
+import { toast, Toaster } from '@redwoodjs/web/toast'
+import { QUERY as tasksQuery } from 'src/components/TasksCell'
+
+const CREATE_TASK = gql`
+  mutation CreateTaskMutation($input: CreateTaskInput!) {
+    createTask(input: $input) {
+      id
+    }
+  }
+`
+
 const TaskView = ({ user_id }) => {
+  const formMethods = useForm()
+
+  const [createTask] = useMutation(CREATE_TASK, {onCompleted: () => {
+    //toast.Success("Task Created")
+    formMethods.reset()
+  },
+  refetchQueries: [{ query: tasksQuery, variables: { user_id } }]
+})
+
+  const onSubmit = (data) => {
+    const now = new Date()
+    createTask({variables: {input: {"user_id": user_id, date: now, ...data} }})
+    //TODO: task date (type dateTime) should be date of listed in component
+    //TODO: remove user_id from query when api team updates function signature
+  }
+
   // current date state
   const color = 'rgb(255,255,255)';
   let today = new Date();
@@ -54,13 +83,14 @@ const TaskView = ({ user_id }) => {
   return (
     <>
       {/* alligned horizontally */}
-      <div className='TaskView' >
-        <Flex direction='column' background={color} p={12} rounded={6}>
+      <div className='TaskView'>
+        <Flex direction='column' background={color} p={12} rounded={6} p={3}>
           <Box fontSize='2xl'>
             <Flex justifyContent='space-between' >
-              <h1>To Do List</h1>
+              <h1 style={{margin: "0px 60px 0px 0px"}}>To Do List</h1>
               {/* input for date */}
-              <div>
+              {/* TODO: remove date change code from this component - rely on calendar date range */}
+              <div className="hidden">
                 <button onClick={() => handleDateChange(-1)}>&lt;</button>
                 <input style={{ backgroundColor: color }} type="date" id='dateinput' value={htmlDate(date)} onChange={(e) => {
                   let newDate = e.target.value.split("-"); //split date into array
@@ -73,16 +103,56 @@ const TaskView = ({ user_id }) => {
             </Flex>
           </Box>
           <Divider />
-          <Flex direction='row' justifyContent='space-between'>
-          <h4>Status</h4>
-          <h4>Name</h4>
-          <h4>Urgency</h4>
-          <h4>Priority</h4>
-
+          <Flex style={{display: "none"}} direction='row' justifyContent='space-between'>
+            <h4>Status</h4>
+            <h4>Name</h4>
+            <h4>Urgency</h4>
+            <h4>Priority</h4>
           </Flex>
+          
+
           <TasksCell user_id={user_id} />
-          {/* display current date */}
-          <p>{date}</p>
+
+
+          <Divider m={1}/>
+          <p style={{fontSize: "1.4rem"}}>Add task:</p>
+          <Form formMethods={formMethods} style={{ display:'flex', flexDirection: "column" }} onSubmit={onSubmit}>
+            
+            <div className="formGroup">
+              <Label>Status</Label>
+              <SelectField name="status_id" validation={{ valueAsNumber: true }}>
+                <option value={1}>Not Started</option>
+                <option value={2}>Started</option>
+                <option value={3}>Completed</option>
+                <option value={4}>Rolled Over</option>
+              </SelectField>
+            </div>
+            
+            <div className="formGroup">
+              <Label>Title</Label>
+              <TextField name="title" placeholder="Title"/>
+            </div>
+
+            <div className="formGroup">
+              <Label>Urgency</Label>
+              <SelectField name="urgency" validation={{ valueAsNumber: true }}>
+                <option value={1}>High</option>
+                <option value={2}>Medium</option>
+                <option value={3}>Low</option>
+              </SelectField>
+            </div>
+            
+            <div className="formGroup">
+              <Label>Priority</Label>
+              <TextField type="number" name="priority" placeholder="Priority"/>
+            </div>
+            
+            <Submit className="button">Save</Submit>
+
+          </Form>
+
+
+          <p className="hidden">{date}</p>
         </Flex>
 
       </div>
