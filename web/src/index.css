@@ -44,9 +44,11 @@ vec3(86/255, 192/255, 245/255),
  }
 
  .main {
+  overflow: auto;
    background: linear-gradient(90deg,
        rgba(255, 200, 225, .5) 0%,
        rgba(196, 238, 254, 0.5) 100%);
+
  }
 
  nav ul {

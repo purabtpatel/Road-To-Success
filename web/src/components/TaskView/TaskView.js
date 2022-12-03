@@ -90,7 +90,7 @@ const TaskView = ({ user_id }) => {
               <h1 style={{margin: "0px 60px 0px 0px"}}>To Do List</h1>
               {/* input for date */}
               {/* TODO: remove date change code from this component - rely on calendar date range */}
-              <div className="hidden">
+              <div >
                 <button onClick={() => handleDateChange(-1)}>&lt;</button>
                 <input style={{ backgroundColor: color }} type="date" id='dateinput' value={htmlDate(date)} onChange={(e) => {
                   let newDate = e.target.value.split("-"); //split date into array
@@ -109,7 +109,7 @@ const TaskView = ({ user_id }) => {
             <h4>Urgency</h4>
             <h4>Priority</h4>
           </Flex>
-          
+
 
           <TasksCell user_id={user_id} />
 
@@ -117,7 +117,7 @@ const TaskView = ({ user_id }) => {
           <Divider m={1}/>
           <p style={{fontSize: "1.4rem"}}>Add task:</p>
           <Form formMethods={formMethods} style={{ display:'flex', flexDirection: "column" }} onSubmit={onSubmit}>
-            
+
             <div className="formGroup">
               <Label>Status</Label>
               <SelectField name="status_id" validation={{ valueAsNumber: true }}>
@@ -127,7 +127,7 @@ const TaskView = ({ user_id }) => {
                 <option value={4}>Rolled Over</option>
               </SelectField>
             </div>
-            
+
             <div className="formGroup">
               <Label>Title</Label>
               <TextField name="title" placeholder="Title"/>
@@ -141,12 +141,12 @@ const TaskView = ({ user_id }) => {
                 <option value={3}>Low</option>
               </SelectField>
             </div>
-            
+
             <div className="formGroup">
               <Label>Priority</Label>
               <TextField type="number" name="priority" placeholder="Priority"/>
             </div>
-            
+
             <Submit className="button">Save</Submit>
 
           </Form>
