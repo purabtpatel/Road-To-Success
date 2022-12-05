@@ -25,3 +25,6 @@ week of 11/21 i got the login button onto the landing page. it doesnt show logou
 Had meeting about progress. With the help of mike we have a gorgeous login and registration functionality
 
 Did a bunch of merges. We've got a good looking landing page and functionalities. Tom and Sergio have told me to step back and relax and let them put finishing touches instead of me worrying for a day. 
+
+
+Meeting with purab about what security has left. im doing regex. Also meeting with purab and UI as it seems they have work to merge into master
