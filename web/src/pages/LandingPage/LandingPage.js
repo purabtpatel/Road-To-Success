@@ -12,6 +12,7 @@ import { Helmet } from '@redwoodjs/web'
 import AppointmentsCell from 'src/components/AppointmentsCell'
 import TasksCell from 'src/components/TasksCell'
 import TaskView from 'src/components/TaskView/TaskView'
+import CalendarCell from 'src/components/CalendarCell'
 
 const authorizeApp = () => {
   window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https://www.googleapis.com/auth/calendar.events&include_granted_scopes=true&response_type=code&client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}`
@@ -33,7 +34,6 @@ const LandingPage = () => {
               </li>
               <li>
                 {isAuthenticated ? (
-                  currentUser && !currentUser.gCalSyncEnabled ? (
                     <>
                       <Button
                         style={{ color: 'black' }}
@@ -45,11 +45,6 @@ const LandingPage = () => {
                         Log Out 👋
                       </Button>
                     </>
-                  ) : (
-                    <Button style={{ color: 'black' }} onClick={logOut}>
-                      Log Out 👋
-                    </Button>
-                  )
                 ) : (
                   <Link to={routes.login()}>
                     <Button style={{ color: 'black' }}>Log In 🖋</Button>
@@ -106,12 +101,13 @@ const LandingPage = () => {
           <div className="particles">
             <Particles options={particlesOptions} init={particlesInit} />
           </div>
-          <div style={{ display: 'block', height: '100vh' }}>
+          <div style={{ height: '100vh' }}>
             {/* <AppointmentsCell
             start={'2021-11-01T12:00:00Z'}
             end={'2023-11-01T12:00:00Z'}
           /> */}
             {/* <TaskCell user_id={currentUser.id} /> */}
+            <CalendarCell start={'2021-11-01T12:00:00Z'} end={'2024-11-01T12:00:00Z'}/>
             <TaskView user_id={currentUser.id} />
           </div>
         </div>

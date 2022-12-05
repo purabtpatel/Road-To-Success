@@ -1,4 +1,3 @@
-
 import FullCalendar, { getEventClassNames } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
@@ -8,7 +7,7 @@ export const QUERY = gql`
 query calendar_demo($start: String!, $end: String!) {
   getEvents(start: $start, end: $end) {
     events {
-      summary
+      title:summary
       start
       end
     }
@@ -16,11 +15,17 @@ query calendar_demo($start: String!, $end: String!) {
 }
 `
 
-const CalendarView = ({getEvents}) => {
-  // get events query
+export const Loading = () => <div>Loading...</div>
+
+export const Empty = () => <div>Empty</div>
+
+export const Failure = ({ error }) => (
+  <div style={{ color: 'red' }}>Error: {error?.message}</div>
+)
+
+export const Success = ({ getEvents }) => {
   console.log(getEvents)
   return (
-
     <div style={{float:"left", width:"68%", marginTop:"1rem", marginLeft:"1rem", background:"rgb(255,255,255)"}}>
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
@@ -28,7 +33,7 @@ const CalendarView = ({getEvents}) => {
         height={600}
         aspectRatio={1.5}
         weekends={true}
-
+        events={getEvents.events}
 
         headerToolbar={{
           left: 'prev,next today',
@@ -40,5 +45,3 @@ const CalendarView = ({getEvents}) => {
     </div>
   )
 }
-
-export default CalendarView
