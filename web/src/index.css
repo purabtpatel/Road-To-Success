@@ -43,6 +43,8 @@ vec3(86/255, 192/255, 245/255),
        rgba(196, 238, 254, 0.5) 100%);
  }
 
+
+
  .main {
   overflow: auto;
    background: linear-gradient(90deg,
@@ -76,6 +78,7 @@ vec3(86/255, 192/255, 245/255),
     height: 800px;
     font-family: "Josefin", Sans-serif;
  }
+
 
 
  .horizontal-bar {

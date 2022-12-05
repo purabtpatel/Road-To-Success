@@ -1,6 +1,6 @@
 import { user, updateUser } from 'src/services/users'
 
-export const getEvents = async ({ start, end}) => {
+export const getEvents = async ({ start, end }) => {
   const { google } = require('googleapis')
   const oauth2Client = new google.auth.OAuth2(
     process.env.CLIENT_ID,
@@ -9,7 +9,7 @@ export const getEvents = async ({ start, end}) => {
   )
 
   const userId = context.currentUser.id // TODO: security check
-  const usr = await user({id: userId})
+  const usr = await user({ id: userId })
 
   let tokens = JSON.parse(usr.tokens)
 
@@ -20,7 +20,7 @@ export const getEvents = async ({ start, end}) => {
     calendarId: 'primary',
     timeMin: start,
     timeMax: end,
-    maxResults: 100,
+    // maxResults: 100,
     singleEvents: true,
     orderBy: 'startTime',
   })
@@ -34,11 +34,11 @@ export const getEvents = async ({ start, end}) => {
     const start = item.start.dateTime || item.start.date
     const end = item.end.dateTime || item.end.date
     const event = {
-      summary: item.summary || "(No Title)",
+      summary: item.summary || '(No Title)',
       description: item.description,
       start: start,
       end: end,
-      id: item.id
+      id: item.id,
     }
     return event
   })
