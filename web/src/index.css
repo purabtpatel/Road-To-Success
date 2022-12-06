@@ -1,56 +1,288 @@
 
-    .img-account-profile {
-        height: 10rem;
-    }
-    .rounded-circle {
-        border-radius: 50% !important;
-    }
-    .card {
-        box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
-    }
-    .card .card-header {
-        font-weight: 500;
-    }
-    .card-header:first-child {
-        border-radius: 0.35rem 0.35rem 0 0;
-    }
-    .card-header {
-        padding: 1rem 1.35rem;
-        margin-bottom: 0;
-        background-color: rgba(33, 40, 50, 0.03);
-        border-bottom: 1px solid rgba(33, 40, 50, 0.125);
-    }
-    .form-control, .dataTable-input {
-        display: block;
-        width: 100%;
-        padding: 0.875rem 1.125rem;
-        font-size: 0.875rem;
-        font-weight: 400;
-        line-height: 1;
-        color: #69707a;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #c5ccd6;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border-radius: 0.35rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-    
-    .nav-borders .nav-link.active {
-        color: #0061f2;
-        border-bottom-color: #0061f2;
-    }
-    .nav-borders .nav-link {
-        color: #4b8d53;
-        border-bottom-width: 0.125rem;
-        border-bottom-style: solid;
-        border-bottom-color: transparent;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0;
-        padding-right: 0;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
+ /*
+  * This is the global CSS file. You can add global styles to this file and they'll be applied to all pages.
+  * Learn more: https://redwoodjs.com/docs/css-variables
+  */
+
+
+
+
+ /* purple : 86, 17, 57  */
+ /* lightblue : 56, 162, 215 */
+ /*
+vec3(86/255, 192/255, 245/255),
+vec3(138/255, 29/255, 89/255),
+vec3(86/255, 192/255, 245/255),
+*/
+
+ /* li:nth-child(n+1) {
+   color: var(--white--);
+   display: block;
+   align-items: baseline;
+   padding: 25px 16px;
+   text-decoration: none;
+   font-family: "Josefin", Sans-serif;
+ } */
+
+ /* rgb(86, 192, 245) */
+ .LandingPage {
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   font-family: "Josefin", Sans-serif;
+ }
+
+ .heading {
+   font-weight: 400;
+   font-size: 96px;
+   line-height: 96px;
+   font-family: "Josefin", Sans-serif;
+   padding: 22px;
+   height: 100vh;
+   background: linear-gradient(90deg,
+       rgba(255, 200, 225, .5) 0%,
+       rgba(196, 238, 254, 0.5) 100%);
+ }
+
+
+
+ .main {
+  overflow: auto;
+   background: linear-gradient(90deg,
+       rgba(255, 200, 225, .5) 0%,
+       rgba(196, 238, 254, 0.5) 100%);
+
+ }
+
+ nav ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background: rgb(150, 0, 70);
+ }
+
+ nav li {
+   float: right;
+   display: block;
+   font-Size: 1.7rem;
+   font-Weight: 800;
+   margin: 0 1rem;
+   padding: 25px 16px;
+ }
+.TaskView {
+    display: flex;
+    flex-direction: column;
+    float:right;
+    margin: 2rem;
+    width: fit-content;
+    height: 800px;
+    font-family: "Josefin", Sans-serif;
+ }
+
+
+
+ .horizontal-bar {
+   margin: 0;
+   padding: 10px 16px;
+   background-color: wheat;
+ }
+
+ #your {
+   color: var(--yellow);
+ }
+
+ .duration {
+   color: var(--yellow);
+   font-size: 20px;
+ }
+
+ .title {
+   font-size: 48px;
+ }
+
+ .footer {
+   margin: 0;
+   padding: 10px 16px;
+   position: fixed;
+   left: 0px;
+   bottom: 0px;
+   right: 0px;
+ }
+
+
+ .innertext {
+   padding-left: 20px;
+
+ }
+
+ .particles {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -100;
+   color: rgb(150, 0, 70);
+ }
+
+ .mini-horizontal-bar {
+   background-color: var(--white--);
+   height: 1.9%;
+   width: 40%;
+   position: absolute;
+   bottom: 0.01%;
+ }
+
+ #redwood-app {
+   overflow: hidden;
+ }
+
+ .bi {}
+
+ /*
+  :root
+{
+  --deep-blue:#364064;
+  --yellow:#F8CD8B;
+  --light-blue-background:#717891;
+  --white--:#ffffff;
+  --orange--:#F39B85;
+
+}
+
+body{
+  color:red;
+  background-color:red;
+}
+
+ul{
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--deep-blue);
+  color:var(--white--);
+
+}
+li{
+  float:right;
+  display: block;
+}
+li:nth-child(n+1){
+  color :var(--white--);
+  display: block;
+  align-items: baseline;
+  padding: 25px 16px;
+  text-decoration: none;
+  font-family: "Josefin" ,Sans-serif;
+
+}
+
+
+.heading {
+color: var(--white--);
+font-weight: 400;
+font-size: 96px;
+line-height: 96px;
+font-family: "Josefin" ,Sans-serif;
+margin: 80px;
+}
+.horizontal-bar{
+  margin:0;
+  padding:10px 16px;
+  background-color:white;
+}
+#your{
+  color:var(--yellow);
+}
+.duration{
+  color:var(--yellow);
+  font-size: 20px;
+}
+.title{
+  font-size: 48px;
+}
+.footer{
+  margin:0;
+  padding:10px 16px;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  right:0px;
+  background-color:var(--orange--);
+}
+.appointmentItem{
+  height:160px;
+  width:40%;
+  margin:80px;
+  background-color:var(--deep-blue);
+  color: #D9D9D9;
+  text-align: left;
+
+}
+
+.innertext{
+padding-left: 20px;
+
+}
+.mini-horizontal-bar{
+  background-color: var(--white--);
+  height:1.9%;
+  width:40%;
+  position:absolute;
+  bottom:0.01%;
+}
+
+#redwood-app{
+  overflow: hidden;
+}
+*/
+
+.hidden {
+  display: none;
+}
+
+
+
+.indentedInput {
+  border: 1px solid silver;
+  margin: 0px 15px 10px 15px;
+  padding: 6px;
+  border-radius: 15px;
+}
+.inputLabel {
+  margin: 10px 0px 0px 10px;
+}
+
+.formGroup{
+  margin: 0px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+}
+.formGroup > label{
+  color: #495057;
+  font-weight: 400;
+  background: #e9ecef;
+  padding: .375rem .75rem;
+  border-radius: .25rem 0px 0px .25rem;
+  border: 1px solid #ced4da;
+  flex: 0 0 25%
+}
+.formGroup > input, .formGroup > select{
+  border: 1px solid #ced4da;
+  font-weight: 400;
+  margin: 0px 0px 0px -1px;
+  padding: .375rem .75rem;
+  border-radius: 0px .25rem .25rem 0px;
+  color: #495057;
+  flex-grow: 1;
+}
+form > button{
+  border-radius: 0.25rem;
+  color: white;
+  background: #007bff;
+  padding: .375rem .75rem;
+}
+
+.TaskView{
+  margin: 1rem;
+}
