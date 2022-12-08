@@ -1,8 +1,18 @@
+/* anything from backup was done by purab and appointmentlist was abby appointmentList
+import AppointmentItem from '../AppointmentItem/AppointmentItem'
+
+export const QUERY = gql`
+  query AppointmentListsQuery {
+    appointmentsLists {
+      id
+      title
+      duration
 import AppointmentItem from "../AppointmentItem/AppointmentItem"
 export const QUERY = gql`
   query AppointmentListsQuery {
     appointmentLists {
       id
+backup
     }
   }
 `
@@ -23,6 +33,19 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
+appointmentList
+export const Success = ({ appointments }) => {
+  const titlefeed = appointments.map((appointment) => (
+    <h2 key={appointment.id}>Title: {appointment.title}</h2>
+  ))
+  return (
+    <ul style={{ 'list-style-type': 'none' }}>
+      <li>
+        <AppointmentItem></AppointmentItem>{titlefeed}
+      </li>
+    </ul>
+  )
+=======
 export const Success = ({ appointmentLists, startDate, endDate, viewtype }) => {
 
   if (viewtype === 'monthly') {
@@ -73,4 +96,6 @@ export const Success = ({ appointmentLists, startDate, endDate, viewtype }) => {
       <div>ViewType missing</div>
     )
   }
+backup
 }
+*/

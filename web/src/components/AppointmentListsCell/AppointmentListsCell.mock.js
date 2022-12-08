@@ -1,3 +1,13 @@
+/* appointmentlist is abby and buckup is purab appointmentList
+// Define your own mock data here:
+export const standard = (/* vars, { ctx, req } */) => ({
+  appointments: [
+    { id: 42, title: 'Finish HW', Duration: '10 mins' },
+    { id: 43, title: 'Sleep', Duration: '10 mins' },
+    { id: 44, title: 'Eat', Duration: '10 mins' },
+    { id: 45, title: 'Read', Duration: '10 mins' },
+  ],
+})
 export const standard = () => ({
   appointments: [
     { id: 42, summary: 'Finish HW', startDateTime: '2022-11-16T06:30:00-05:00', endDateTime: '2022-11-16T07:30:00-05:00'},
@@ -36,3 +46,5 @@ export const standard = () => ({
 //     {"summary":"another test event","description":null,"start":"2022-11-16T06:30:00-05:00","end":"2022-11-16T07:30:00-05:00","typename":"Event"},
 //     {"summary":"event","description":"description","start":"2022-11-22T12:00:00-05:00","end":"2022-11-22T13:00:00-05:00","typename":"Event"}
 //   ],"__typename":"Events"}}}
+backup
+*/

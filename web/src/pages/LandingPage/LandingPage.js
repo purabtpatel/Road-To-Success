@@ -6,8 +6,10 @@ import { loadFull } from "tsparticles";
 import particlesOptions from "./particles.json";
 import { useAuth } from '@redwoodjs/auth'
 import { Link, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
 import { Helmet } from '@redwoodjs/web'
+/* <<<<<<< appointmentList
+import AppointmentListsCell from '@redwoodjs/web' */
+=======
 
 import AppointmentsCell from 'src/components/AppointmentsCell'
 import TasksCell from 'src/components/TasksCell'
@@ -17,6 +19,7 @@ import CalendarCell from 'src/components/CalendarCell'
 const authorizeApp = () => {
   window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https://www.googleapis.com/auth/calendar.events&include_granted_scopes=true&response_type=code&client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}`
 }
+
 
 const LandingPage = () => {
   const particlesInit = useCallback(main => {
@@ -117,6 +120,7 @@ const LandingPage = () => {
 
 
 
+      <div className="footer"></div>
     </>
   )
 }

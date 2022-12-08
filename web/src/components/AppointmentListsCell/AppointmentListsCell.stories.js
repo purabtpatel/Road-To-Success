@@ -1,3 +1,5 @@
+/* abby is appointmentlist and purab is backup
+
 import { Loading, Empty, Failure, Success } from './AppointmentListsCell'
 import { standard } from './AppointmentListsCell.mock'
 
@@ -14,6 +16,11 @@ export const failure = (args) => {
 }
 
 export const success = (args) => {
+ appointmentList
+  return Success ? <Success appointments={standard().appointments} /> : <></>
+}
+
+
   return Success ? <Success appointmentLists={standard().appointments}/> : <></>
 }
 
@@ -30,4 +37,7 @@ export const daily = (args) => {
 }
 
 
+backup
 export default { title: 'Cells/AppointmentListsCell' }
+
+*/

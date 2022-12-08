@@ -1,3 +1,23 @@
+/* const AppointmentItem = () => {
+  //mock data
+  const appointments = [{ id: 42, title: 'Finish HW', Duration: '10 mins' }]
+
+  const titlefeed = appointments.map((appointment) => (
+    <h2 key={appointment.id}> Title: {appointment.title}</h2>
+  ))
+  const duration = appointments.map((appointment) => (
+    <h2 key={appointment.id}> Duration: {appointment.Duration}</h2>
+  ))
+
+  return (
+    <div className="appointmentItem">
+      <h2 className="innertext title ">{titlefeed}</h2>
+
+      <p className="innertext duration">{duration}</p>
+      <div className="mini-horizontal-bar"></div>
+    </div>
+  ) done by abby */
+/* done by purab  
 import { Flex } from "@chakra-ui/react"
 import { Redirect } from "@redwoodjs/router"
 
@@ -40,3 +60,4 @@ const AppointmentItem = ({id, title, startTime, duration, viewType}) => {
 }
 
 export default AppointmentItem
+*/
