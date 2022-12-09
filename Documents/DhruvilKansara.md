@@ -31,13 +31,23 @@ Did a bunch of merges. We've got a good looking landing page and functionalities
 Meeting with purab about what security has left. im doing regex. Also meeting with purab and UI as it seems they have work to merge into master
 
 Plan was changed. Tom and sergio will be working on regex, forgot password, email verification. I have been tasked with clean up by Purab. The following files were deleted within pull requests and commented out as to who had what.
-Appointmentlist.js 
-Appointmentlistscell.js
-Appointmentlistscell.mock.js
-Appointmentlistscell.stories.js
+- Appointmentlist.js 
+- Appointmentlistscell.js
+- Appointmentlistscell.mock.js
+- Appointmentlistscell.stories.js
 
 Also certain branches older than 2 weeks were deleted. They are as follows: 
-Lazar, Appointmentitem, Merge-test-branch, Task_UI_Small_changes, AppointmentList, dailyview, profile-branch, progress, securityjawn, tasks_api, and banner. 
+- Lazar 
+- Appointmentitem
+- Merge-test-branch
+- Task_UI_Small_changes
+- AppointmentList
+- dailyview
+- profile-branch
+- progress
+- securityjawn
+- tasks_api
+- banner
 These were all stale and as directed by purab and at my discretion they were checked, merged into backup(which is a copy of Master), pull requested, and then deleted. 
 
 * Commits (**These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner.** )
