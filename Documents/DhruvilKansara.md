@@ -54,7 +54,7 @@ Also certain branches older than 2 weeks were deleted. They are as follows:
 - tasks_api
 - banner
 
-**These were all stale and as directed by purab and at my discretion they were checked, merged into backup(which is a copy of Master), pull requested, and then deleted. **
+# These were all stale and as directed by purab and at my discretion they were checked, merged into backup(which is a copy of Master), pull requested, and then deleted.
 
 ## Commits:
 (**These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner.** )
