@@ -53,7 +53,8 @@ Also certain branches older than 2 weeks were deleted. They are as follows:
 - securityjawn
 - tasks_api
 - banner
-These were all stale and as directed by purab and at my discretion they were checked, merged into backup(which is a copy of Master), pull requested, and then deleted. 
+
+**These were all stale and as directed by purab and at my discretion they were checked, merged into backup(which is a copy of Master), pull requested, and then deleted. **
 
 ## Commits:
 (**These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner.** )
@@ -68,5 +69,3 @@ These were all stale and as directed by purab and at my discretion they were che
   * [Commit 3](https://github.com/dhruvilk/Road-To-Success/commit/baaf91f6fbe5831e01d14e480b5128d6924bc359)
   * [Commit 2](https://github.com/dhruvilk/Road-To-Success/commit/a87ee356f02013eef03841a8a88b051d93dea6a9)
   * [Commit 1](https://github.com/dhruvilk/Road-To-Success/commit/a02025bf9473eaedb6d3ea682513df5121ab91b3)
-
-
