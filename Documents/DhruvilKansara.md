@@ -42,6 +42,7 @@ which is auth0. I've been reading up on it and this thursday at night Team Kenny
 - Appointmentlistscell.stories.js
 
 Also certain branches older than 2 weeks were deleted. They are as follows: 
+
 **These were all stale and as directed by purab and at my discretion they were checked, merged into backup(which is a copy of Master), pull requested, and then deleted.**
 - Lazar 
 - Appointmentitem
