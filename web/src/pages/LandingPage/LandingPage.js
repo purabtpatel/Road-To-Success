@@ -11,9 +11,9 @@ import { Helmet } from '@redwoodjs/web'
 /* <<<<<<< appointmentList
 import AppointmentListsCell from '@redwoodjs/web' */
 
-import AppointmentsCell from 'src/components/AppointmentsCell'
+// import AppointmentsCell from 'src/components/AppointmentsCell'
 import CalendarCell from 'src/components/CalendarCell'
-import TasksCell from 'src/components/TasksCell'
+// import TasksCell from 'src/components/TasksCell'
 import TaskView from 'src/components/TaskView/TaskView'
 
 import particlesOptions from './particles.json'
