@@ -1,4 +1,4 @@
-import { DbAuthHandler } from '@redwoodjs/api'
+import { DbAuthHandler, PasswordValidationError } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
 
@@ -108,7 +108,7 @@ export const handler = async (event, context) => {
           email: username,
           hashedPassword: hashedPassword,
           salt: salt,
-          // name: userAttributes.name
+          name: userAttributes.name,
         },
       })
     },
@@ -116,10 +116,31 @@ export const handler = async (event, context) => {
     // Include any format checks for password here. Return `true` if the
     // password is valid, otherwise throw a `PasswordValidationError`.
     // Import the error along with `DbAuthHandler` from `@redwoodjs/api` above.
+
+    // changed by dhruv for password strength. if statements, regex
     passwordValidation: (_password) => {
+      var minNumberofChars = 6
+      var maxNumberofChars = 16
+      var passwordRegEx =
+        /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+
+      if (
+        _password.length < minNumberofChars ||
+        _password.length > maxNumberofChars
+      ) {
+        throw new PasswordValidationError(
+          'Password must be between 6 and 16 characters'
+        )
+      }
+
+      if (!_password.match(passwordRegEx)) {
+        throw new PasswordValidationError(
+          'password should contain atleast one number and one special character'
+        )
+      }
       return true
     },
-
+    // end of changed by dhruv
     errors: {
       // `field` will be either "username" or "password"
       fieldMissing: '${field} is required',
