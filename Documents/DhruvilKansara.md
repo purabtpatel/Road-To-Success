@@ -1,5 +1,5 @@
 
-#                           Dhruvil Kansara CS490-103 Semester Project
+#                           Dhruvil Kansara CS490-103 "Road to Success"
 
 ### ```Sprint 1 (Oct19-Nov2)```
 + I initialized the repo and did everything. Next week idk what we'll do
