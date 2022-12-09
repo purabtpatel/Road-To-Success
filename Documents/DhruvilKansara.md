@@ -36,4 +36,20 @@ Appointmentlistscell.mock.js
 Appointmentlistscell.stories.js
 
 Also certain branches older than 2 weeks were deleted. They are as follows: 
+Lazar, Appointmentitem, Merge-test-branch, Task_UI_Small_changes, AppointmentList, dailyview, profile-branch, progress, securityjawn, tasks_api, and banner. 
+These were all stale and as directed by purab and at my discretion they were checked, merged into backup(which is a copy of Master), pull requested, and then deleted. 
 
+Commits:
+https://github.com/dhruvilk/Road-To-Success/commit/3b8ab4c8b05e71178a37e1ef8fe21858fa452d8f
+https://github.com/dhruvilk/Road-To-Success/commit/70793898f2fee75ef593e4ea79e1804d17326e58
+https://github.com/dhruvilk/Road-To-Success/commit/c1abfa79f23a99def216e7414d95b316c215d019
+https://github.com/dhruvilk/Road-To-Success/commit/ff6aa50224acbb4622ab6c20a124a6cfcd7c65bb
+https://github.com/dhruvilk/Road-To-Success/commit/f4dfd82887df817605bc7bc55e7f246d945596a9
+https://github.com/dhruvilk/Road-To-Success/commit/9c500aba76af0414f4d17bde5de46fb3f7944748
+https://github.com/dhruvilk/Road-To-Success/commit/2769bd201465de0aee50d5b854687935978f0658
+https://github.com/dhruvilk/Road-To-Success/commit/2d34846621a84562519c0e60bb2b8e45586c634a
+https://github.com/dhruvilk/Road-To-Success/commit/baaf91f6fbe5831e01d14e480b5128d6924bc359
+https://github.com/dhruvilk/Road-To-Success/commit/a87ee356f02013eef03841a8a88b051d93dea6a9
+https://github.com/dhruvilk/Road-To-Success/commit/a02025bf9473eaedb6d3ea682513df5121ab91b3
+
+These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner. 
