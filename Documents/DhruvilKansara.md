@@ -55,7 +55,8 @@ Also certain branches older than 2 weeks were deleted. They are as follows:
 - banner
 These were all stale and as directed by purab and at my discretion they were checked, merged into backup(which is a copy of Master), pull requested, and then deleted. 
 
-* Commits (**These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner.** )
+## Commits:
+(**These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner.** )
   * [Commit 11](https://github.com/dhruvilk/Road-To-Success/commit/3b8ab4c8b05e71178a37e1ef8fe21858fa452d8f)
   * [Commit 10](https://github.com/dhruvilk/Road-To-Success/commit/70793898f2fee75ef593e4ea79e1804d17326e58)
   * [Commit 9](https://github.com/dhruvilk/Road-To-Success/commit/c1abfa79f23a99def216e7414d95b316c215d019)
