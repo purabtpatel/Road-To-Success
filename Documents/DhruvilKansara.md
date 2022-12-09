@@ -56,6 +56,8 @@ Also certain branches older than 2 weeks were deleted. They are as follows:
 - tasks_api
 - banner
 
++ Purab and I went through and deleted unused and irrelevant files. I will not list them here but he will have them on his readme. Also certain imports in relevant files were commented out to show which files were not used. 
+
 ## Commits:
 (**These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner.** )
   * [Commit 11](https://github.com/dhruvilk/Road-To-Success/commit/3b8ab4c8b05e71178a37e1ef8fe21858fa452d8f)
