@@ -60,7 +60,7 @@ export const CalendarView = () => {
         events={events}
         expandRows={true}
        //
-        contentHeight= {window.innerHeight-200}
+        contentHeight= {window.innerHeight-194}
         windowResizeDelay={100}
         stickyHeaderDates={true}
         headerToolbar={{
