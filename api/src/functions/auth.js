@@ -2,6 +2,8 @@ import { DbAuthHandler, PasswordValidationError } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
 
+// const nodemailer = require('nodemailer') //added nodemailer
+
 export const handler = async (event, context) => {
   const forgotPasswordOptions = {
     // handler() is invoked after verifying that a user was found with the given
@@ -16,10 +18,33 @@ export const handler = async (event, context) => {
     // You could use this return value to, for example, show the email
     // address in a toast message so the user will know it worked and where
     // to look for the email.
-    handler: (user) => {
+    // testing forgor password
+    handler: async (user) => {
+      // try {
+      //   let transporter = nodemailer.createTransport({
+      //     host: process.env.SMTP_HOST,
+      //     port: process.env.SMTP_PORT,
+      //     secure: true,
+      //     auth: {
+      //       user: process.env.SMTP_USER,
+      //       pass: process.env.SMTP_PASS,
+      //     },
+      //   })
+      //   const resetLink = `${process.env.APP_URL}/reset-password?resetToken=${user.resetToken}`
+      //   const message = {
+      //     from: process.env.AUTH_EMAIL_FROM,
+      //     to: user.email,
+      //     subject: 'Reset Forgotten Password',
+      //     html: `Here is a link reset your password.  It will expire after 4hrs. <a href="${resetLink}">Reset my Password</>`,
+      //   }
+      //   await transporter.sendMail(message)
+      // } catch (err) {
+      //   console.error(err)
+      // }
+
       return user
     },
-
+    // end testing forgor password
     // How long the resetToken is valid for, in seconds (default is 24 hours)
     expires: 60 * 60 * 24,
 
@@ -135,7 +160,7 @@ export const handler = async (event, context) => {
 
       if (!_password.match(passwordRegEx)) {
         throw new PasswordValidationError(
-          'password should contain atleast one number and one special character'
+          'Password should contain atleast one number, uppercase character, and one special character'
         )
       }
       return true
