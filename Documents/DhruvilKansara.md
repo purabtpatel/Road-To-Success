@@ -58,8 +58,12 @@ Also certain branches older than 2 weeks were deleted. They are as follows:
 
 + Purab and I went through and deleted unused and irrelevant files. I will not list them here but he will have them on his readme. Also certain imports in relevant files were commented out to show which files were not used. 
 
++ Security team meeting with purab. Got forcing users to sign up with emails down. Sergio almost has forgot password down and tom is doing email verification. Also I added stuff to force users to make strong passwords
+
 ## Commits:
 (**These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner.** )
+  * [Commit 13]((https://github.com/dhruvilk/Road-To-Success/commit/a8324dec9bc8202e1547b7cdecc6905a9e223d9e)
+  * [Commit 12](https://github.com/dhruvilk/Road-To-Success/commit/ff83e065b4ebbf08e8107ac13999f5d433a8b563)
   * [Commit 11](https://github.com/dhruvilk/Road-To-Success/commit/3b8ab4c8b05e71178a37e1ef8fe21858fa452d8f)
   * [Commit 10](https://github.com/dhruvilk/Road-To-Success/commit/70793898f2fee75ef593e4ea79e1804d17326e58)
   * [Commit 9](https://github.com/dhruvilk/Road-To-Success/commit/c1abfa79f23a99def216e7414d95b316c215d019)
