@@ -62,7 +62,7 @@ Also certain branches older than 2 weeks were deleted. They are as follows:
 
 ## Commits:
 (**These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner.** )
-  * [Commit 13]((https://github.com/dhruvilk/Road-To-Success/commit/a8324dec9bc8202e1547b7cdecc6905a9e223d9e)
+  * [Commit 13](https://github.com/dhruvilk/Road-To-Success/commit/a8324dec9bc8202e1547b7cdecc6905a9e223d9e)
   * [Commit 12](https://github.com/dhruvilk/Road-To-Success/commit/ff83e065b4ebbf08e8107ac13999f5d433a8b563)
   * [Commit 11](https://github.com/dhruvilk/Road-To-Success/commit/3b8ab4c8b05e71178a37e1ef8fe21858fa452d8f)
   * [Commit 10](https://github.com/dhruvilk/Road-To-Success/commit/70793898f2fee75ef593e4ea79e1804d17326e58)
