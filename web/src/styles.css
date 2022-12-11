@@ -33,6 +33,8 @@
   font-size: 2.3rem;
   color: white;
   line-height: 2.3rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 

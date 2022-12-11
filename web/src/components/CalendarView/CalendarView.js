@@ -27,7 +27,7 @@ const GET_EVENTS = gql`
 //)
 
 const getEvents = () => {
-  
+
 }
 
 export const CalendarView = () => {
@@ -52,7 +52,7 @@ export const CalendarView = () => {
   }
 
   return (
-    <>
+    <div style={{background:"rgb(255,255,255)"}}>
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
@@ -70,7 +70,7 @@ export const CalendarView = () => {
         }}
         datesSet={handleDateRangeChange}
       />
-    </>
+    </div>
   )
 }
 
