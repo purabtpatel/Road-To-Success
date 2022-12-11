@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
  /*
   * This is the global CSS file. You can add global styles to this file and they'll be applied to all pages.
@@ -71,13 +72,13 @@ vec3(86/255, 192/255, 245/255),
    padding: 25px 16px;
  }
 .TaskView {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     float:right;
-    margin: 2rem;
+    //margin: 2rem;
     width: fit-content;
-    height: 800px;
-    font-family: "Josefin", Sans-serif;
+   // height: 800px;
+    font-family: "Josefin", Sans-serif;*/
  }
 
 
@@ -121,7 +122,6 @@ vec3(86/255, 192/255, 245/255),
    top: 0;
    left: 0;
    z-index: -100;
-   color: rgb(150, 0, 70);
  }
 
  .mini-horizontal-bar {
@@ -284,7 +284,7 @@ form > button{
 }
 
 .TaskView{
-  margin: 1rem;
+  /*margin: 1rem;*/
 }
 
 
