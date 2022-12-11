@@ -5,6 +5,7 @@ import {FieldError, Form, Label, InputField, TextField, TextAreaField, SelectFie
 import { MetaTags, useMutation } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 import { QUERY as tasksQuery } from 'src/components/TasksCell'
+import './../../index.css'
 
 const CREATE_TASK = gql`
   mutation CreateTaskMutation($input: CreateTaskInput!) {
@@ -147,7 +148,7 @@ const TaskView = ({ user_id }) => {
               <TextField type="number" name="priority" placeholder="Priority"/>
             </div>
 
-            <Submit className="button">Save</Submit>
+            <Submit className="fc-button-primary">Save</Submit>
 
           </Form>
 

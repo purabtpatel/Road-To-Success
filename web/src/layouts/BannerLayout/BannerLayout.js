@@ -1,5 +1,5 @@
 
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { Toaster } from '@redwoodjs/web/toast'
 import { toast } from '@redwoodjs/web/toast'
 import { Link, routes } from '@redwoodjs/router'
@@ -17,6 +17,21 @@ const BannerLayout = ({ children }) => {
   const particlesInit = useCallback(main => {
     loadFull(main);
   }, [])
+
+  const [theme, setTheme] = useState('light')
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark')
+    }
+    else {
+      setTheme('light')
+    }
+  }
+  useEffect(() => {
+    document.body.className = theme
+  }, [theme])
+
+
   return <>
     <div className="particles">
       <Particles options={particlesOptions} init={particlesInit} />
@@ -25,16 +40,18 @@ const BannerLayout = ({ children }) => {
 
     <header style={{ position: "relative" }}>
       <nav className="mb-nav">
-        <Link to={routes.landingPage()} className="mb-nav-logo">
-          <div style={{ float: 'left', display: 'inline' }}>
+        <div className="mb-nav-logo">
+          <button onClick={toggleTheme} style={{ float: 'left', display: 'inline', border:"0px"}}>
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-calendar-check-fill" viewBox="0 0 16 16" >
               <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
             </svg>
-          </div>
-          <div style={{ float: 'left', display: 'inline', paddingLeft: "20px", fontSize: '30px' }}>
-            <h1>Road to Success</h1>
-          </div>
-        </Link>
+          </button>
+          <Link to={routes.landingPage()}>
+            <div style={{ float: 'left', display: 'inline', paddingLeft: "20px", fontSize: '30px' }}>
+              <h1>Road to Success</h1>
+            </div>
+          </Link>
+        </div>
         <div className="mb-nav-link-container">
           {isAuthenticated
             ? currentUser.gCalSyncEnabled
@@ -42,10 +59,10 @@ const BannerLayout = ({ children }) => {
               <>
 
                 <div style={{ float: 'right', display: 'inline' }}>
-                <Button onClick={() => { toast('✌️ see you later', { duration: 2000 }); logOut(); }}>Log Out</Button>
+                  <Button onClick={() => { toast('✌️ see you later', { duration: 2000 }); logOut(); }}>Log Out</Button>
                 </div>
                 <div className='mb-nav-logo' style={{ float: 'right', display: 'inline', paddingRight: "20px", fontSize: '30px' }}>
-                <Link to={routes.profilePage()}> {currentUser.email}</Link>
+                  <Link to={routes.profilePage()}> {currentUser.email}</Link>
                 </div>
 
               </>

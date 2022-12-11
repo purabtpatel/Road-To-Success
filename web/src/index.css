@@ -26,6 +26,9 @@ vec3(86/255, 192/255, 245/255),
  } */
 
  /* rgb(86, 192, 245) */
+ .dark{
+  filter: invert(1) contrast(.9) brightness(.8) hue-rotate(180deg) saturate(1.2);
+ }
  .LandingPage {
    justify-content: center;
    align-items: center;
