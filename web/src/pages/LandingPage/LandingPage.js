@@ -10,9 +10,7 @@ import TaskView from 'src/components/TaskView/TaskView'
 import CalendarView from 'src/components/CalendarView'
 
 
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
-import particlesOptions from "./particles.json";
+
 
 import './../../styles.css'
 
@@ -21,14 +19,9 @@ const authorizeApp = () => {
 }
 
 const renderGreeting = () => {
-  const particlesInit = useCallback(main => {
-    loadFull(main);
-  }, [])
+
   return (
     <div className="col-flex p-30">
-      <div className="particles">
-        <Particles options={particlesOptions} init={particlesInit} />
-      </div>
       <h1 className="mb-heading">
         Manage your tasks,<br></br>our way
       </h1>
@@ -39,16 +32,13 @@ const renderGreeting = () => {
   )
 }
 const renderAuthenticated = () => {
-  const particlesInit = useCallback(main => {
-    loadFull(main);
-  }, [])
+
   return (
     <div className="mb-main">
-        <Particles options={particlesOptions} init={particlesInit} />
-      <div id="calendarContainer" style={{position:"relative"}}>
+      <div id="calendarContainer" style={{ position: "relative" }}>
         <CalendarView />
       </div>
-      <div id="taskviewContainer" style={{position:"relative"}}>
+      <div id="taskviewContainer" style={{ position: "relative" }}>
         <TaskView />
       </div>
     </div>

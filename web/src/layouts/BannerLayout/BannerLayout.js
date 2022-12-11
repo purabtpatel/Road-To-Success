@@ -1,14 +1,27 @@
+import React, { useCallback } from 'react';
 import { Toaster } from '@redwoodjs/web/toast'
 import { toast } from '@redwoodjs/web/toast'
 import { Link, routes } from '@redwoodjs/router'
 import { useAuth } from '@redwoodjs/auth'
 import { Button } from '@chakra-ui/react'
+
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
+import particlesOptions from "./particles.json";
+
 import './../../styles.css'
 
 const BannerLayout = ({ children }) => {
   const { isAuthenticated, currentUser, logOut } = useAuth()
+  const particlesInit = useCallback(main => {
+    loadFull(main);
+  }, [])
   return <>
+      <div className="particles">
+      <Particles options={particlesOptions} init={particlesInit} />
+      </div>
       <Toaster />
+
       <header style={{position:"relative"}}>
         <nav className="mb-nav">
           <Link to={routes.landingPage()} className="mb-nav-logo">

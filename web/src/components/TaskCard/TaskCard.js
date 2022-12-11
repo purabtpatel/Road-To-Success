@@ -103,8 +103,9 @@ const TaskCard = ({ task }) => {
             variant="solid"
             size="sm"
             m={1}
+
           >
-            <DeleteIcon color="white.500" />
+            <DeleteIcon color="white.500"/>
           </Button>
         </Flex>
         :

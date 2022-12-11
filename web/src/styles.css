@@ -99,7 +99,7 @@
 
 .mb-main{
   min-height: calc(100vh - 64px);
-  background: #ececec;
+  background: rgba(206,206,206,.5);
   display: flex;
   flex-direction: row;
   padding: 0rem 0rem 0rem 1rem;
