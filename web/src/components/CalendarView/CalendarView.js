@@ -1,3 +1,4 @@
+
 import FullCalendar, { getEventClassNames } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
@@ -75,3 +76,4 @@ export const CalendarView = () => {
 }
 
 export default CalendarView
+

@@ -3,7 +3,6 @@ import BannerLayout from './layouts/BannerLayout/BannerLayout'
 
 const Routes = () => {
   return (
-
     <Router>
       <Set wrap={BannerLayout}>
         <Route path="/authcallback" page={AuthCallbackPage} name="authCallback" />

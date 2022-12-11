@@ -1,3 +1,4 @@
+
 /* eslint-disable no-unused-vars */
 import { Button } from '@chakra-ui/react'
 import React, { useCallback } from 'react';
@@ -59,4 +60,5 @@ const LandingPage = () => {
 }
 
 export default LandingPage
+
 

@@ -1,3 +1,4 @@
+
 import React, { useCallback } from 'react';
 import { Toaster } from '@redwoodjs/web/toast'
 import { toast } from '@redwoodjs/web/toast'
@@ -56,6 +57,7 @@ const BannerLayout = ({ children }) => {
     </header>
     <main>{children}</main>
   </>
+
 }
 
 export default BannerLayout
