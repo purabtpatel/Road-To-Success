@@ -1,7 +1,7 @@
 import { db } from 'src/lib/db'
 
 export const tasks = () => {
-  const user_id = context.currentUser.id 
+  const user_id = context.currentUser.id
   return db.task.findMany({
     where: { user_id },
   })
@@ -15,9 +15,21 @@ export const task = ({ id }) => {
 export const allTasks = () => {
   return db.task.findMany()
 }
-export const getByDate = ({ user_id, date }) => {
+export const getByDate = ({ date }) => {
+  const user_id = context.currentUser.id
+
+    let dayOne = new Date(date);
+    let dayTwo = new Date(date);
+    dayTwo.setDate(dayTwo.getDate() + 1);
+    dayOne = dayOne.toISOString();
+    dayTwo = dayTwo.toISOString();
+
+    console.log("Day one: " + dayOne + " || Day two: " + dayTwo);
   return db.task.findMany({
-    where: { user_id, date },
+    where: { user_id, date:{
+      gte: dayOne,
+      lt: dayTwo
+    } },
   })
 }
 
