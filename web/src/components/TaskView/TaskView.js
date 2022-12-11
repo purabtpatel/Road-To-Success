@@ -16,21 +16,11 @@ const CREATE_TASK = gql`
 `
 
 const TaskView = ({ user_id }) => {
-  var [reload, setReload] = useState(false);
   const formMethods = useForm()
-  useEffect(() => {
-   //window.location.reload(false);
-  }, [reload])
-  function reloadPage() {
-    this.setState({ state: this.state });
-  }
   const [createTask] = useMutation(CREATE_TASK, {
     onCompleted: () => {
       toast.success("Task Created"),
-      formMethods.reset(),
-      reloadPage()
-
-
+      formMethods.reset()
     },
     refetchQueries: [{ query: tasksQuery, variables: { user_id } }]
   })
@@ -103,7 +93,6 @@ const TaskView = ({ user_id }) => {
     let month = dateArr[0];
     let day = dateArr[1];
     let year = dateArr[2];
-    const newDate = year + '-' + month + '-' + day;
 
     let dayOne = new Date(year, month - 1, day).toISOString();
 

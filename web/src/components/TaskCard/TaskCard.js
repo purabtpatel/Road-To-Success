@@ -65,7 +65,6 @@ const TaskCard = ({ task }) => {
     }
   }, [statusText, urgencyText, priorityText]);
 
-  console.log("Fetched date: " + task.date);
   return (
 
     <>

@@ -24,7 +24,7 @@ export const getByDate = ({ date }) => {
     dayOne = dayOne.toISOString();
     dayTwo = dayTwo.toISOString();
 
-    console.log("Day one: " + dayOne + "|| Day two: " + dayTwo);
+    console.log("Day one: " + dayOne + " || Day two: " + dayTwo);
   return db.task.findMany({
     where: { user_id, date:{
       gte: dayOne,
