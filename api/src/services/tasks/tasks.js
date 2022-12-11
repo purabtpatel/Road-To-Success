@@ -45,7 +45,6 @@ export const Task = {
   },
 }
 
-
 export const getUserTasksOfUrgency = ({ user_id, urgency }) => {
   return db.task.findMany({
     where: { user_id, urgency },
@@ -58,3 +57,11 @@ export const getUserTasksOfPriority = ({ user_id, priority }) => {
   })
 }
 
+export const rollTasksOver = ({ date }) => {
+  var userId = context.currentUser.id
+  var masterList = db.task.findMany({
+    where: { userId, date },
+  })
+
+  console.log(masterList.length)
+}
