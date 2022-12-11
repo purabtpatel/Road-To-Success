@@ -1,6 +1,7 @@
 import { db } from 'src/lib/db'
 
-export const tasks = ({ user_id }) => {
+export const tasks = () => {
+  const user_id = context.currentUser.id 
   return db.task.findMany({
     where: { user_id },
   })
@@ -21,6 +22,7 @@ export const getByDate = ({ user_id, date }) => {
 }
 
 export const createTask = ({ input }) => {
+  input.user_id = context.currentUser.id
   return db.task.create({
     data: input,
   })
