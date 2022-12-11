@@ -65,8 +65,9 @@ const TaskCard = ({ task }) => {
     }
   }, [statusText, urgencyText, priorityText]);
 
-
+  console.log("Fetched date: " + task.date);
   return (
+
     <>
       {statusText != 5 ?
         <Flex className={style[statusText-1]} background={statusColor} p={1} rounded={6} margin={1}>

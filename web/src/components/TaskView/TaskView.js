@@ -40,10 +40,7 @@ const TaskView = ({ user_id }) => {
   let yyyy = today.getFullYear();
   today = mm + '-' + dd + '-' + yyyy;
   const [date, setDate] = useState(today);
-  useEffect(() => {
-    // get current date in digits only
 
-  }, [])
 
   //change date format from mm-dd-yyyy to yyyy-mm-dd for html date input
   function htmlDate(date) {
@@ -78,9 +75,28 @@ const TaskView = ({ user_id }) => {
     }
     setDate(stringdate)
     //select dateinput and set to newDateString
+
     document.getElementById("dateinput").value = stringdate;
 
   }
+
+  //convert date to yyyy-mm-dd format
+  function convertDate(date) {
+    let dateArr = date.split('-');
+    let month = dateArr[0];
+    let day = dateArr[1];
+    let year = dateArr[2];
+    const newDate = new Date(year, month - 1, day).toISOString();
+    console.log("Passed in date: " + newDate);
+    return newDate;
+
+  }
+
+
+
+  //2022-12-01T22:06:51.226Z
+
+
   return (
     <>
       {/* alligned horizontally */}
@@ -111,8 +127,8 @@ const TaskView = ({ user_id }) => {
             <h4>Priority</h4>
           </Flex>
 
-
-          <TasksCell/>
+          {/* date={time} */}
+          <TasksCell date={convertDate(date)}/>
 
 
           <Divider m={1}/>
