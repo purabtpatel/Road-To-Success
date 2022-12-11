@@ -170,3 +170,14 @@
   border: 2px dotted !important;
   padding: 2px 7px;
 }
+.fc-button-primary{
+  color: #673ef0 !important;
+  background-color: white !important;
+  border-color: #673ef0 !important;
+  border: 1px dotted;
+  padding: 3px 8px;
+}
+.fc-button-primary:hover{
+  border: 2px dotted !important;
+  padding: 2px 7px;
+}
