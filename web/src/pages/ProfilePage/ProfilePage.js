@@ -34,7 +34,7 @@ const ProfilePage = () => {
         </svg>
 
           <div className="name">User</div>
-          <div className="status">Status</div>
+          <div className="status">Status :  active</div>
         </div>
 
         <div className="sidenav-url">
@@ -42,10 +42,6 @@ const ProfilePage = () => {
             <a href="#profile" className="active">
               Profile
             </a>
-            <hr align="center"></hr>
-          </div>
-          <div className="url">
-            <a href="#settings">Settings</a>
             <hr align="center"></hr>
           </div>
         </div>
