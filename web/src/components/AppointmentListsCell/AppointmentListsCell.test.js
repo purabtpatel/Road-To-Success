@@ -1,4 +1,5 @@
-import { render } from '@redwoodjs/testing/web'
+import { render, screen } from '@redwoodjs/testing/web'
+
 import { Loading, Empty, Failure, Success } from './AppointmentListsCell'
 import { standard } from './AppointmentListsCell.mock'
 
@@ -38,4 +39,17 @@ describe('AppointmentListsCell', () => {
       render(<Success appointmentLists={standard().appointmentLists} />)
     }).not.toThrow()
   })
+
+  it('renders month view successfully', () => {
+    render(
+      <Success
+        appointmentLists={standard().appointmentLists}
+        startDate={'2022-11-16T06:00:00-05:00'}
+        endDate={'2022-11-18T07:30:00-05:00'}
+        viewtype={'monthly'}
+      />
+    )
+    expect(screen.getByText('FinishHW')).toBeinTheDocument()
+  })
+
 })
