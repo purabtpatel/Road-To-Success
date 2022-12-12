@@ -57,11 +57,23 @@ export const getUserTasksOfPriority = ({ user_id, priority }) => {
   })
 }
 
-export const rollTasksOver = ({ date }) => {
+
+export const rollTasksOver = async ({ date }) => {
+  console.log('beginning query procedure with algorithm payload!')
+  console.log(date)
+  console.log('above is input date!')
+
+  //creating necessary variables
   var userId = context.currentUser.id
-  var masterList = db.task.findMany({
+  var masterList = await db.task.findMany({
     where: { userId, date },
   })
 
-  console.log(masterList.length)
+  console.log(masterList)
+
+  //ignored output
+  return db.task.findMany({
+    where: { userId, date },
+  })
 }
+
