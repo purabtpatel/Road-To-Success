@@ -59,35 +59,37 @@ const ProfilePage = () => {
             <table>
               <tbody>
                 <tr>
-                  <td>Name</td>
+                  <td> First Name</td>
                   <td>:</td>
-                  <td>Sam Bankman Fried</td>
+                  <td>Sam</td>
+                </tr>
+
+                <tr>
+                  <td> Last Name</td>
+                  <td>:</td>
+                  <td>Bankman</td>
                 </tr>
                 <tr>
-                  <td>Email</td>
+                  <td>Current Password</td>
                   <td>:</td>
-                  <td>SBF@FTX.com</td>
+                  <td>
+                    <input className='textpass' type="text" id="currentpassword" name="password" placeholder="Current Password" ></input>
+                  </td>
                 </tr>
                 <tr>
-                  <td>Address</td>
+                  <td>New Passowrd</td>
                   <td>:</td>
-                  <td>Florida , United States</td>
+                  <td><input className='textpass' type="text" id="newpassword" name="password" placeholder="New Password" ></input></td>
                 </tr>
                 <tr>
-                  <td>Hobbies</td>
+                  <td>Confirm Password</td>
                   <td>:</td>
-                  <td>Ponzi Schemes</td>
+                  <td><input className='textpass' type="text" id="ConfirmPassword" name="password" placeholder="Confirm Password" ></input></td>
                 </tr>
                 <tr>
-                  <td>Job</td>
-                  <td>:</td>
-                  <td>Day Trader</td>
+                  <button className='saveBtn'> Save</button>
                 </tr>
-                <tr>
-                  <td>Skill</td>
-                  <td>:</td>
-                  <td>PHP, HTML, CSS, Java</td>
-                </tr>
+
               </tbody>
             </table>
           </div>
@@ -99,8 +101,7 @@ const ProfilePage = () => {
             <i className="fa fa-pen fa-xs edit"></i>
             <div className="social-media">
               <span className="fa-stack fa-sm">
-                <i className="fas fa-circle fa-stack-2x"></i>
-                <i className="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                <img src='web/src/pages/ProfilePage/img/twitter.jpeg'></img>
               </span>
               <span className="fa-stack fa-sm">
                 <i className="fas fa-circle fa-stack-2x"></i>

@@ -63,7 +63,7 @@ vec3(86/255, 192/255, 245/255),
    margin: 0;
    padding: 0;
    overflow: hidden;
-   background: rgb(150, 0, 70);
+   background-color:  #673ef0 !important;
  }
 
  nav li {
@@ -89,7 +89,7 @@ vec3(86/255, 192/255, 245/255),
  .horizontal-bar {
    margin: 0;
    padding: 10px 16px;
-   background-color: wheat;
+   background-color: rgb(210, 208, 208);
  }
 
  #your {
@@ -344,8 +344,8 @@ form > button{
 
 /* Sidenav */
 .sidenav {
-  background-color: wheat;
-    color: #333;
+    background-color: #673ef0 !important;
+    color: rgb(255, 253, 253);
     border-bottom-right-radius: 25px;
     height: 86%;
     left: 0;
@@ -490,4 +490,33 @@ td{
   font-weight: bolder;
 }
 
-/* End */
+.textpass{
+  background-color: #c2c3c4;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border:3px double #0548e5;
+}
+
+.saveBtn{
+  max-height: 45px;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-image: linear-gradient(to bottom, rgb(25, 0, 252) 0,rgb(6, 94, 189) 21%,rgb(7, 173, 199) 50% ,rgb(3, 129, 160) 73%, rgb(54, 226, 245) 100%);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.saveBtn:hover{
+  transform:scale(1.075) ; /*increases the size*/
+  transition: 0.2s ease-in;
+}
+
+
