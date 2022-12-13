@@ -45,7 +45,13 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ getByDate }) => {
   let arr = [...getByDate]
-  arr.sort((a, b) => a.priority - b.priority)
+  arr.sort((a, b) => {
+    if (a.urgency === b.urgency) {
+      return a.priority - b.priority
+    } else {
+      return a.urgency - b.urgency
+    }
+  })
   return (
     <ul style={{ listStyleType: 'none' }}>
       {arr.map((item) => {
