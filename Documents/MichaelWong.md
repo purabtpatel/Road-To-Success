@@ -22,4 +22,4 @@ Finally got stuff working. Used a workaround and solved the errors toast was giv
 ## Dec 10
 Finished tests for SignUpPage, FatalErrorPage, LandingPage, and ForgotPasswordPage. [commit](https://github.com/dhruvilk/Road-To-Success/commit/07ab65630adacc94f7b02e7f092b22c64132ac62)
 ## Dec 12
-Atttempted to mock the proper constants for SignupPage and ForgotPasswordPage. Couldn't figure out how to both get rid of the toast errors and mock it cleanly so I made a workaround for the presentation; otherwise I would've left it on the test branch.
+Atttempted to mock the proper constants for SignupPage and ForgotPasswordPage. Couldn't figure out how to both get rid of the toast errors and mock it cleanly so I made a workaround for the presentation; otherwise I would've left it on the test branch. [commit](https://github.com/dhruvilk/Road-To-Success/commit/36f16a62bd8224cabac083f58bd16a8ecadf934b)
