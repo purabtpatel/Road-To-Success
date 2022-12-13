@@ -1,5 +1,5 @@
-import { render } from '@redwoodjs/testing/web'
-
+import { render, screen } from '@redwoodjs/testing/web'
+import { standard } from './CalendarView.mock'
 import CalendarView from './CalendarView'
 
 //   Improve this test with help from the Redwood Testing Doc:
@@ -8,7 +8,18 @@ import CalendarView from './CalendarView'
 describe('CalendarView', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<CalendarView />)
-    }).not.toThrow()
+      render(<CalendarView getEvents={standard().Events}/>)
+    })
+  })
+
+  it('Shows Date', () => {
+    render(<CalendarView getEvents={standard().Events}/>)
+    expect(screen.getByText('today')).toBeInTheDocument()
+  })
+  it('Shows the different view options', () =>{
+    render(<CalendarView getEvents={standard().Events}/>)
+    expect(screen.getByText('day')).toBeInTheDocument()
+    expect(screen.getByText('week')).toBeInTheDocument()
+    expect(screen.getByText('month')).toBeInTheDocument()
   })
 })
