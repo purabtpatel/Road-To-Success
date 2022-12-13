@@ -53,9 +53,12 @@ const TaskView = ({ user_id }) => {
     let year = dateArr[2]
 
     const newdate = new Date(year, month - 1, day).toISOString()
-    data.date = newdate
-    data.user_id = user_id
-    createTask(data)
+    createTask({
+      variables: { input: { user_id: user_id, date: newdate, ...data } },
+    })
+    //data.date = newdate
+    //data.user_id = user_id
+    //createTask(data)
     //TODO: task date (type dateTime) should be date of listed in component
     //TODO: remove user_id from query when api team updates function signature
   }

@@ -18,18 +18,21 @@ export const allTasks = () => {
 export const getByDate = ({ date }) => {
   const user_id = context.currentUser.id
 
-    let dayOne = new Date(date);
-    let dayTwo = new Date(date);
-    dayTwo.setDate(dayTwo.getDate() + 1);
-    dayOne = dayOne.toISOString();
-    dayTwo = dayTwo.toISOString();
+  let dayOne = new Date(date)
+  let dayTwo = new Date(date)
+  dayTwo.setDate(dayTwo.getDate() + 1)
+  dayOne = dayOne.toISOString()
+  dayTwo = dayTwo.toISOString()
 
-    console.log("Day one: " + dayOne + " || Day two: " + dayTwo);
+  console.log('Day one: ' + dayOne + ' || Day two: ' + dayTwo)
   return db.task.findMany({
-    where: { user_id, date:{
-      gte: dayOne,
-      lt: dayTwo
-    } },
+    where: {
+      user_id,
+      date: {
+        gte: dayOne,
+        lt: dayTwo,
+      },
+    },
   })
 }
 
@@ -59,7 +62,6 @@ export const Task = {
   },
 }
 
-
 export const getUserTasksOfUrgency = ({ user_id, urgency }) => {
   return db.task.findMany({
     where: { user_id, urgency },
@@ -71,4 +73,3 @@ export const getUserTasksOfPriority = ({ user_id, priority }) => {
     where: { user_id, priority },
   })
 }
-

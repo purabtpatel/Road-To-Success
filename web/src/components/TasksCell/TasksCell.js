@@ -1,9 +1,11 @@
-import { useMutation } from "@redwoodjs/web"
-import TaskCard from "../TaskCard/TaskCard"
 import { Divider, Select, toast } from '@chakra-ui/react'
+
+import { useMutation } from '@redwoodjs/web'
+
+import TaskCard from '../TaskCard/TaskCard'
 export const QUERY = gql`
-  query FindTaskQuery($date: DateTime!){
-    getByDate(date: $date){
+  query FindTaskQuery($date: DateTime!) {
+    getByDate(date: $date) {
       id
       user_id
       title
@@ -33,8 +35,6 @@ export const QUERY = gql`
 //   }
 // `
 
-
-
 export const Loading = () => <div>Loading...</div>
 
 export const Empty = () => <div>No tasks found</div>
@@ -44,12 +44,17 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ getByDate }) => {
-
+  let arr = [...getByDate]
+  arr.sort((a, b) => a.priority - b.priority)
   return (
     <ul style={{ listStyleType: 'none' }}>
-      {getByDate.map((item) => {
-        if(item.status_id != 5) {
-        return <li key={item.id}><TaskCard task={item} /></li>
+      {arr.map((item) => {
+        if (item.status_id != 5) {
+          return (
+            <li key={item.id}>
+              <TaskCard task={item} />
+            </li>
+          )
         }
       })}
     </ul>
