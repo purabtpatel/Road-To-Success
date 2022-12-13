@@ -14,7 +14,7 @@ import { Link, navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
-const SignupPage = () => {
+const SignupPageTEST = () => {
   const { isAuthenticated, signUp } = useAuth()
 
   useEffect(() => {
@@ -30,7 +30,8 @@ const SignupPage = () => {
   }, [])
 
   const onSubmit = async (data) => {
-    const response = await signUp({ ...data })
+    console.log('submit works')
+    /*const response = await signUp({ ...data })
 
     if (response.message) {
       toast(response.message)
@@ -39,7 +40,8 @@ const SignupPage = () => {
     } else {
       // user is signed in automatically
       toast.success('Welcome!')
-    }
+    }*/
+    toast.success('Welcome!')
   }
 
   return (
@@ -122,4 +124,4 @@ const SignupPage = () => {
   )
 }
 
-export default SignupPage
+export default SignupPageTEST
