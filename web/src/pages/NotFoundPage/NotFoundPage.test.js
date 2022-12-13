@@ -1,4 +1,4 @@
-import { render } from '@redwoodjs/testing/web'
+import { render, screen } from '@redwoodjs/testing/web'
 
 import NotFoundPage from './NotFoundPage'
 
@@ -7,5 +7,9 @@ describe('NotFoundPage', () => {
     expect(() => {
       render(<NotFoundPage />)
     }).not.toThrow()
+  })
+  it('shows not found error', () => {
+    render(<NotFoundPage />)
+    expect(screen.getByText('404 Page Not Found')).toBeInTheDocument()
   })
 })
