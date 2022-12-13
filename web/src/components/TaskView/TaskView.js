@@ -3,18 +3,15 @@ import React, { useState, useEffect } from 'react'
 import { Box, Divider, Flex } from '@chakra-ui/react'
 
 import {
-  FieldError,
   Form,
   Label,
-  InputField,
   TextField,
-  TextAreaField,
   SelectField,
   Submit,
   useForm,
 } from '@redwoodjs/forms'
-import { MetaTags, useMutation } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { useMutation } from '@redwoodjs/web'
+// import { toast, Toaster } from '@redwoodjs/web/toast'
 
 import TasksCell from 'src/components/TasksCell'
 import { QUERY as tasksQuery } from 'src/components/TasksCell'
@@ -78,14 +75,15 @@ const TaskView = ({ user_id }) => {
     const newYear = newDate.getFullYear()
     const newMonth = newDate.getMonth() + 1
     const newDay = newDate.getDate()
+    var stringdate
     if (newMonth < 10 && newDay < 10) {
-      var stringdate = '0' + newMonth + '-0' + newDay + '-' + newYear
+      stringdate = '0' + newMonth + '-0' + newDay + '-' + newYear
     } else if (newMonth < 10) {
-      var stringdate = '0' + newMonth + '-' + newDay + '-' + newYear
+      stringdate = '0' + newMonth + '-' + newDay + '-' + newYear
     } else if (newDay < 10) {
-      var stringdate = newMonth + '-0' + newDay + '-' + newYear
+      stringdate = newMonth + '-0' + newDay + '-' + newYear
     } else {
-      var stringdate = newMonth + '-' + newDay + '-' + newYear
+      stringdate = newMonth + '-' + newDay + '-' + newYear
     }
     setDate(stringdate)
     //select dateinput and set to newDateString
