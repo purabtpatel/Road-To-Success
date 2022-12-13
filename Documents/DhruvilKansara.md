@@ -4,15 +4,15 @@
 ### ```Sprint 1 (Oct19-Nov2)```
 + I initialized the repo and did everything. Next week idk what we'll do
 
-+ For the week of 10/26 I am going to start working on the security aspect. We've figured out what we're going to use 
++ For the week of 10/26 I am going to start working on the security aspect. We've figured out what we're going to use
 which is auth0. I've been reading up on it and this thursday at night Team Kenny Security is meeting up to work on it
 
-+ Did a bunch of reading on auth0. 
++ Did a bunch of reading on auth0.
 
 + Set up auth0 in a separate branch yesterday(10/29)
 
 + Today on 10/30 team security will hop on and put the finishing touches on auth0. Get a home page up and running, get login and registration done(10/30)
- 
+
 ### ```Sprint 2 (Nov3-Nov16)```
 + Restarted our stuff from square 1 since we decided having two logins was kind of dumb
 
@@ -31,20 +31,20 @@ which is auth0. I've been reading up on it and this thursday at night Team Kenny
 + Had meeting about progress. With the help of mike we have a gorgeous login and registration functionality
 
 ### ```Sprint 4 (Dec1-Dec14)```
-+ Did a bunch of merges. We've got a good looking landing page and functionalities. Tom and Sergio have told me to step back and relax and let them put finishing touches instead of me worrying for a day. 
++ Did a bunch of merges. We've got a good looking landing page and functionalities. Tom and Sergio have told me to step back and relax and let them put finishing touches instead of me worrying for a day.
 
 + Meeting with purab about what security has left. im doing regex. Also meeting with purab and UI as it seems they have work to merge into master
 
 + Plan was changed. Tom and sergio will be working on regex, forgot password, email verification. I have been tasked with clean up by Purab. The following files were deleted within pull requests and commented out as to who had what.
-- Appointmentlist.js 
+- Appointmentlist.js
 - Appointmentlistscell.js
 - Appointmentlistscell.mock.js
 - Appointmentlistscell.stories.js
 
-Also certain branches older than 2 weeks were deleted. They are as follows: 
+Also certain branches older than 2 weeks were deleted. They are as follows:
 
 **These were all stale and as directed by purab and at my discretion they were checked, merged into backup(which is a copy of Master), pull requested, and then deleted.**
-- Lazar 
+- Lazar
 - Appointmentitem
 - Merge-test-branch
 - Task_UI_Small_changes
@@ -56,7 +56,7 @@ Also certain branches older than 2 weeks were deleted. They are as follows:
 - tasks_api
 - banner
 
-+ Purab and I went through and deleted unused and irrelevant files. I will not list them here but he will have them on his readme. Also certain imports in relevant files were commented out to show which files were not used. 
++ Purab and I went through and deleted unused and irrelevant files. I will not list them here but he will have them on his readme. Also certain imports in relevant files were commented out to show which files were not used.
 
 + Security team meeting with purab. Got forcing users to sign up with emails down. Sergio almost has forgot password down and tom is doing email verification. Also I added stuff to force users to make strong passwords
 
