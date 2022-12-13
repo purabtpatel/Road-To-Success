@@ -2,7 +2,7 @@ import userEvent from '@testing-library/user-event'
 
 import { render, screen, waitFor } from '@redwoodjs/testing/web'
 
-import SignupPage from './SignupPage'
+import SignupPageTEST from './SignupPageTEST'
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
@@ -23,7 +23,7 @@ describe('SignupPage', () => {
 
   beforeEach(() => {
     onSub.mockClear()
-    render(<SignupPage onSubmit={onSub} />)
+    render(<SignupPageTEST onSubmit={onSub} />)
   })
 
   it('on proper submit, toast notifications can be displayed', async () => {

@@ -22,7 +22,7 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 })
-import ForgotPasswordPage from './ForgotPasswordPage'
+import ForgotPasswordPageTEST from './ForgotPasswordPageTEST'
 
 /*jest.mock('@redwoodjs/router', () => ({
   navigate() {
@@ -32,12 +32,12 @@ import ForgotPasswordPage from './ForgotPasswordPage'
 //import { notif } from './ForgotPasswordPage.js'
 //jest.mock(notif)
 
-describe('ForgotPasswordPage', () => {
+describe('ForgotPasswordPageTEST', () => {
   const onSub = jest.fn()
 
   beforeEach(() => {
     onSub.mockClear()
-    render(<ForgotPasswordPage onSubmit={onSub} />)
+    render(<ForgotPasswordPageTEST onSubmit={onSub} />)
   })
 
   it('renders a submit button', () => {
@@ -105,36 +105,5 @@ describe('ForgotPasswordPage', () => {
     await waitFor(() => userEvent.click(submitButton))
     expect(console.log).toHaveBeenCalledWith('submit works')
     console.log.mockClear()
-  })
-
-  jest.mock('@redwoodjs/router')
-  it('navigate works', async () => {
-    //const mockedNavigate = jest.fn()
-
-    /*jest.mock('@redwoodjs/router', () => {
-      return {
-        navigate: jest.fn(({ path }) => 'Redirected to ${path}'),
-      }
-    })*/
-    //navigate.mockImplementation(() => () => Promise.resolve('/login'))
-
-    /*jest.mock('@redwoodjs/router', () => ({
-      ...jest.requireActual('@redwoodjs/router'),
-      navigate: () => mockedNavigate,
-    }))*/
-
-    const uNameField = screen.getByRole('textbox', { name: /Username/i })
-    const submitButton = screen.getByRole('button', {
-      name: /submit/i,
-    })
-
-    await waitFor(() => userEvent.type(uNameField, 'email@email.com'))
-    await waitFor(() => userEvent.click(submitButton))
-
-    const op = await navigate()
-
-    expect(op).toHaveBeenCalled()
-
-    //expect(mockedNavigate).toHaveBeenCalled()
   })
 })
