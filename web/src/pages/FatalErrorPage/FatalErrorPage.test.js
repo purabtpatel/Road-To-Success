@@ -1,4 +1,4 @@
-import { render } from '@redwoodjs/testing/web'
+import { render, screen, waitFor } from '@redwoodjs/testing/web'
 
 import FatalErrorPage from './FatalErrorPage'
 
@@ -7,5 +7,11 @@ describe('FatalErrorPage', () => {
     expect(() => {
       render(<FatalErrorPage />)
     }).not.toThrow()
+  })
+  it('renders "Something went wrong"', async () => {
+    render(<FatalErrorPage />)
+    await waitFor(() => {
+      expect(screen.queryByText('Something went wrong')).toBeInTheDocument()
+    })
   })
 })
