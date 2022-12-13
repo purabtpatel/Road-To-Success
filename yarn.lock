@@ -7994,7 +7994,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/user-event@npm:14.4.3":
+"@testing-library/user-event@npm:14.4.3, @testing-library/user-event@npm:^14.4.3":
   version: 14.4.3
   resolution: "@testing-library/user-event@npm:14.4.3"
   peerDependencies:
@@ -26813,6 +26813,7 @@ __metadata:
     "@redwoodjs/forms": 3.2.0
     "@redwoodjs/router": 3.2.0
     "@redwoodjs/web": 3.2.0
+    "@testing-library/user-event": ^14.4.3
     framer-motion: ^6.5.1
     prop-types: 15.8.1
     react: 17.0.2
