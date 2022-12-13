@@ -6,7 +6,7 @@ import { navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
-const ForgotPasswordPage = () => {
+const ForgotPasswordPageTEST = () => {
   const { isAuthenticated, forgotPassword } = useAuth()
 
   useEffect(() => {
@@ -21,7 +21,8 @@ const ForgotPasswordPage = () => {
   }, [])
 
   const onSubmit = async (data) => {
-    const response = await forgotPassword(data.username)
+    console.log('submit works')
+    /*const response = await forgotPassword(data.username)
 
     if (response.error) {
       toast.error(response.error)
@@ -34,7 +35,8 @@ const ForgotPasswordPage = () => {
       )
 
       navigate(routes.login())
-    }
+    }*/
+    toast.success('A link to reset your password was sent to ')
   }
 
   return (
@@ -95,4 +97,4 @@ const ForgotPasswordPage = () => {
   )
 }
 
-export default ForgotPasswordPage
+export default ForgotPasswordPageTEST
