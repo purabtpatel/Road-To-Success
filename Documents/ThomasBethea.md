@@ -38,7 +38,8 @@ User Email Verification:
 - Modified mutation inside of schema.graphql to reflect verifyEmail and verifyReset.
 - Inside of apr/src/graphql/users.sdl.js, modified Mutation to include verifyEmail and updateEmail 
 - Inside of api/src/services/users/users.js modified file to include verifyEmail and updateEmail
-- Email verification feature did not make it into final iteration
+- Email verification feature did not make it into final iteration. This is a work in progress. Branch below
+- Branch: https://github.com/dhruvilk/Road-To-Success/commit/6de0406ddd6580ffe398fcb390348c8f8e76e781
 
 References:
 - https://medium.com/@agiannelli/building-an-authenticated-site-with-redwoodjs-and-auth0-e476a5313563
