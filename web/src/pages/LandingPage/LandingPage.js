@@ -14,14 +14,8 @@ const renderGreeting = () => {
   return (
     <div className="col-flex p-30">
       <h1 className="mb-heading">
-        Manage your tasks,<br></br>our way
+        THE ROAD TO SUCCESS,<br></br>STARTS WITH A PLAN
       </h1>
-      <h3 className="sub-header">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt
-        bibendum scelerisque. In at ante tincidunt nisi porta laoreet. Quisque
-        hendrerit turpis quis urna volutpat eleifend. Maecenas porttitor commodo
-        tristique. Ut sit amet dignissim lectus.
-      </h3>
     </div>
   )
 }
