@@ -14,7 +14,7 @@ export const schema = gql`
   type Query {
     tasks: [Task!]! @requireAuth
     task(id: Int!): Task @requireAuth
-    rollTasksOver(date: DateTime!): [Task] @skipAuth
+    rollTasksOver(date: DateTime!): [Task] @requireAuth
 
 
     getUserTasksOfUrgency(user_id: Int!, urgency: Int!): [Task!]! @requireAuth

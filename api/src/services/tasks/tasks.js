@@ -344,7 +344,7 @@ export const rollTasksOver = async ({ date }) => {
           const MakeTask = await db.task.create({
             data: {
               user_id: holUse,
-              status_id: 3,
+              status_id: 4,
               title: holTitle,
               urgency: 1,
               priority: prioCount,
@@ -368,7 +368,7 @@ export const rollTasksOver = async ({ date }) => {
           const MakeTask = await db.task.create({
             data: {
               user_id: holUse,
-              status_id: 3,
+              status_id: 4,
               title: holTitle,
               urgency: 2,
               priority: prioCount,
@@ -392,7 +392,7 @@ export const rollTasksOver = async ({ date }) => {
           const MakeTask = await db.task.create({
             data: {
               user_id: holUse,
-              status_id: 3,
+              status_id: 4,
               title: holTitle,
               urgency: 3,
               priority: prioCount,
