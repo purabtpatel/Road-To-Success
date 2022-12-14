@@ -1,8 +1,5 @@
 import { useRef } from 'react'
-import React, { useEffect } from 'react'
-
-import { gapi } from 'gapi-script'
-
+import { useEffect } from 'react'
 
 import { useAuth } from '@redwoodjs/auth'
 import {
@@ -10,36 +7,15 @@ import {
   Label,
   TextField,
   PasswordField,
-  Submit,
   FieldError,
+  Submit,
 } from '@redwoodjs/forms'
 import { Link, navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
-const LoginPage = () => {
-  const clientId = process.env.CLIENT_ID
-  useEffect(() => {
-    const initClient = () => {
-      gapi.client.init({
-        clientId: clientId,
-        scope: '',
-      })
-    }
-    gapi.load('client:auth2', initClient)
-  })
-
-
-  // const onSuccess = (res) => {
-  //   setProfile(res.profileObj)
-  //   console.log('Login Success: currentUser:', res.profileObj)
-  // }
-
-  // const onFailure = (err) => {
-  //   console.log('failed', err)
-  // }
-
-  const { isAuthenticated, logIn } = useAuth()
+const SignupPageTEST = () => {
+  const { isAuthenticated, signUp } = useAuth()
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -47,33 +23,37 @@ const LoginPage = () => {
     }
   }, [isAuthenticated])
 
+  // focus on email box on page load
   const usernameRef = useRef(null)
   useEffect(() => {
     usernameRef.current?.focus()
   }, [])
 
   const onSubmit = async (data) => {
-    const response = await logIn({ ...data })
+    console.log('submit works')
+    /*const response = await signUp({ ...data })
 
     if (response.message) {
       toast(response.message)
     } else if (response.error) {
       toast.error(response.error)
     } else {
-      toast.success('Welcome back!')
-    }
+      // user is signed in automatically
+      toast.success('Welcome!')
+    }*/
+    toast.success('Welcome!')
   }
 
   return (
     <>
-      <MetaTags title="Login" />
+      <MetaTags title="Signup" />
 
       <main className="rw-main">
         <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
         <div className="rw-scaffold rw-login-container">
           <div className="rw-segment">
             <header className="rw-segment-header">
-              <h2 className="rw-heading rw-heading-secondary">Login</h2>
+              <h2 className="rw-heading rw-heading-secondary">Signup</h2>
             </header>
 
             <div className="rw-segment-main">
@@ -121,29 +101,21 @@ const LoginPage = () => {
                     }}
                   />
 
-                  <div className="rw-forgot-link">
-                    <Link
-                      to={routes.forgotPassword()}
-                      className="rw-forgot-link"
-                    >
-                      Forgot Password?
-                    </Link>
-                  </div>
-
                   <FieldError name="password" className="rw-field-error" />
 
                   <div className="rw-button-group">
-                    <Submit className="rw-button rw-button-blue">Login</Submit>
+                    <Submit className="rw-button rw-button-blue">
+                      Sign Up
+                    </Submit>
                   </div>
                 </Form>
-
               </div>
             </div>
           </div>
           <div className="rw-login-link">
-            <span>Don&apos;t have an account?</span>{' '}
-            <Link to={routes.signup()} className="rw-link">
-              Sign up!
+            <span>Already have an account?</span>{' '}
+            <Link to={routes.login()} className="rw-link">
+              Log in!
             </Link>
           </div>
         </div>
@@ -152,4 +124,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default SignupPageTEST
