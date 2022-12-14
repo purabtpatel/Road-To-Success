@@ -13,6 +13,7 @@ import {
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
+import ROCell from 'src/components/ROCell'
 import TasksCell from 'src/components/TasksCell'
 import { QUERY as tasksQuery } from 'src/components/TasksCell'
 import './../../index.css'
@@ -116,6 +117,7 @@ const TaskView = ({ userId }) => {
   return (
     <>
       {/* alligned horizontally */}
+      <div style={{ display: 'none' }}><ROCell date={convertDate(date)} style={{ display: 'none' }}/></div>
       <div className="TaskView">
         <Flex direction="column" background={color} rounded={6} p={3}>
           <Box fontSize="2xl">
