@@ -18,6 +18,8 @@
   - [*12/3/22*](#12322)
   - [*12/5/22*](#12522)
   - [*12/9/22*](#12922)
+  - [*12/10/22*](#121022)
+  - [*12/11/22*](#121122)
 - [Current Status](#current-status)
 - [Completed Tasks](#completed-tasks)
 
@@ -153,8 +155,21 @@
   - Mainylayout
   - Taskspage
 
+## *12/10/22*
+- Fixed a few styling issues with Mike's changes to the styling
+- added Particles back into the background of the app
+- [Related Commit](https://github.com/dhruvilk/Road-To-Success/commit/043258f0a09a04b81154457dcb81e573f0cfb4e7)
+
+## *12/11/22*
+- Switched query in taskview to fetchbydate, linked up the datepicker to the query and it runs smoothly. Note: Lazar added sorting of the tasks by priority and urgency last second to master on the 12th and it slightly messes with the smoothness of date scrolling. Everything works, but there are some glitches with date picking.
+- [Related Commit](https://github.com/dhruvilk/Road-To-Success/commit/77b7f9266f41e552b8e6e5eb78c02e3932059916)
+- [Related Commit](https://github.com/dhruvilk/Road-To-Success/commit/a823b1c86e11cebe3db291afbf589514af2efd04)
+- Added dark theme
+- [Related Commit](https://github.com/dhruvilk/Road-To-Success/commit/d0c07a053be5fc4bf594ab2d8bed21048c5d604b)
+
+
 # Current Status
-- Working on adding the date picker component to the FullCalendar.
+-
 
 # Completed Tasks
 - Task View
