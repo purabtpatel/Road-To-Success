@@ -3,16 +3,17 @@ import React, { useState, useEffect } from 'react'
 import { Box, Divider, Flex } from '@chakra-ui/react'
 
 import {
-  FieldError,
   Form,
   Label,
-  InputField,
   TextField,
+  FieldError,
+  InputField,
   TextAreaField,
   SelectField,
   Submit,
   useForm,
 } from '@redwoodjs/forms'
+import { useMutation } from '@redwoodjs/web'
 import { MetaTags, useMutation } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
@@ -36,6 +37,7 @@ const TaskView = ({ user_id }) => {
     },
     refetchQueries: [{ query: tasksQuery, variables: { user_id } }],
   })
+
 
   // current date state
   const color = 'rgb(255,255,255)'
@@ -63,6 +65,18 @@ const TaskView = ({ user_id }) => {
     //TODO: remove user_id from query when api team updates function signature
   }
 
+  // current date state
+  const color = 'rgb(255,255,255)'
+  let today = new Date()
+  let dd = String(today.getDate()).padStart(2, '0')
+  let mm = String(today.getMonth() + 1).padStart(2, '0') //January is 0!
+  let yyyy = today.getFullYear()
+  today = mm + '-' + dd + '-' + yyyy
+  const [date, setDate] = useState(today)
+  useEffect(() => {
+    // get current date in digits only
+  }, [])
+
   //change date format from mm-dd-yyyy to yyyy-mm-dd for html date input
   function htmlDate(date) {
     let dateArr = date.split('-')
@@ -82,14 +96,15 @@ const TaskView = ({ user_id }) => {
     const newYear = newDate.getFullYear()
     const newMonth = newDate.getMonth() + 1
     const newDay = newDate.getDate()
+    var stringdate
     if (newMonth < 10 && newDay < 10) {
-      var stringdate = '0' + newMonth + '-0' + newDay + '-' + newYear
+      stringdate = '0' + newMonth + '-0' + newDay + '-' + newYear
     } else if (newMonth < 10) {
-      var stringdate = '0' + newMonth + '-' + newDay + '-' + newYear
+      stringdate = '0' + newMonth + '-' + newDay + '-' + newYear
     } else if (newDay < 10) {
-      var stringdate = newMonth + '-0' + newDay + '-' + newYear
+      stringdate = newMonth + '-0' + newDay + '-' + newYear
     } else {
-      var stringdate = newMonth + '-' + newDay + '-' + newYear
+      stringdate = newMonth + '-' + newDay + '-' + newYear
     }
     setDate(stringdate)
     //select dateinput and set to newDateString
@@ -115,7 +130,8 @@ const TaskView = ({ user_id }) => {
     <>
       {/* alligned horizontally */}
       <div className="TaskView">
-        <Flex direction="column" background={color} rounded={6}>
+        <Flex direction="column" background={color} rounded={6} p={3}>
+
           <Box fontSize="2xl">
             <Flex justifyContent="space-between">
               <h1 style={{ margin: '0px 60px 0px 0px' }}>To Do List</h1>
@@ -150,6 +166,7 @@ const TaskView = ({ user_id }) => {
             <h4>Urgency</h4>
             <h4>Priority</h4>
           </Flex>
+
 
           {/* date={time} */}
           <TasksCell date={convertDate(date)} />
@@ -192,6 +209,7 @@ const TaskView = ({ user_id }) => {
               <Label>Priority</Label>
               <TextField type="number" name="priority" placeholder="Priority" />
             </div>
+
 
             <Submit className="fc-button-primary">Save</Submit>
           </Form>
