@@ -6,16 +6,12 @@ import {
   Form,
   Label,
   TextField,
-  FieldError,
-  InputField,
-  TextAreaField,
   SelectField,
   Submit,
   useForm,
 } from '@redwoodjs/forms'
 import { useMutation } from '@redwoodjs/web'
-import { MetaTags, useMutation } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { toast } from '@redwoodjs/web/toast'
 
 import TasksCell from 'src/components/TasksCell'
 import { QUERY as tasksQuery } from 'src/components/TasksCell'
@@ -29,24 +25,15 @@ const CREATE_TASK = gql`
   }
 `
 
-const TaskView = ({ user_id }) => {
+const TaskView = ({ userId }) => {
   const formMethods = useForm()
   const [createTask] = useMutation(CREATE_TASK, {
     onCompleted: () => {
+      // eslint-disable-next-line no-unused-expressions
       toast.success('Task Created'), formMethods.reset()
     },
-    refetchQueries: [{ query: tasksQuery, variables: { user_id } }],
+    refetchQueries: [{ query: tasksQuery, variables: { userId } }],
   })
-
-
-  // current date state
-  const color = 'rgb(255,255,255)'
-  let today = new Date()
-  let dd = String(today.getDate()).padStart(2, '0')
-  let mm = String(today.getMonth() + 1).padStart(2, '0') //January is 0!
-  let yyyy = today.getFullYear()
-  today = mm + '-' + dd + '-' + yyyy
-  const [date, setDate] = useState(today)
 
   const onSubmit = (data) => {
     let dateArr = date.split('-')
@@ -56,7 +43,7 @@ const TaskView = ({ user_id }) => {
 
     const newdate = new Date(year, month - 1, day).toISOString()
     createTask({
-      variables: { input: { user_id: user_id, date: newdate, ...data } },
+      variables: { input: { user_id: userId, date: newdate, ...data } },
     })
     //data.date = newdate
     //data.user_id = user_id
@@ -131,7 +118,6 @@ const TaskView = ({ user_id }) => {
       {/* alligned horizontally */}
       <div className="TaskView">
         <Flex direction="column" background={color} rounded={6} p={3}>
-
           <Box fontSize="2xl">
             <Flex justifyContent="space-between">
               <h1 style={{ margin: '0px 60px 0px 0px' }}>To Do List</h1>
@@ -166,7 +152,6 @@ const TaskView = ({ user_id }) => {
             <h4>Urgency</h4>
             <h4>Priority</h4>
           </Flex>
-
 
           {/* date={time} */}
           <TasksCell date={convertDate(date)} />
@@ -209,7 +194,6 @@ const TaskView = ({ user_id }) => {
               <Label>Priority</Label>
               <TextField type="number" name="priority" placeholder="Priority" />
             </div>
-
 
             <Submit className="fc-button-primary">Save</Submit>
           </Form>
