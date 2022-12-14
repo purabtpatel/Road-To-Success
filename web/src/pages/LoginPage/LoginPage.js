@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 
 import { gapi } from 'gapi-script'
 
-
 import { useAuth } from '@redwoodjs/auth'
 import {
   Form,
@@ -28,7 +27,6 @@ const LoginPage = () => {
     }
     gapi.load('client:auth2', initClient)
   })
-
 
   // const onSuccess = (res) => {
   //   setProfile(res.profileObj)
@@ -136,7 +134,6 @@ const LoginPage = () => {
                     <Submit className="rw-button rw-button-blue">Login</Submit>
                   </div>
                 </Form>
-
               </div>
             </div>
           </div>

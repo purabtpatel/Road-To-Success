@@ -18,33 +18,10 @@ export const handler = async (event, context) => {
     // You could use this return value to, for example, show the email
     // address in a toast message so the user will know it worked and where
     // to look for the email.
-    // testing forgor password
-    handler: async (user) => {
-      // try {
-      //   let transporter = nodemailer.createTransport({
-      //     host: process.env.SMTP_HOST,
-      //     port: process.env.SMTP_PORT,
-      //     secure: true,
-      //     auth: {
-      //       user: process.env.SMTP_USER,
-      //       pass: process.env.SMTP_PASS,
-      //     },
-      //   })
-      //   const resetLink = `${process.env.APP_URL}/reset-password?resetToken=${user.resetToken}`
-      //   const message = {
-      //     from: process.env.AUTH_EMAIL_FROM,
-      //     to: user.email,
-      //     subject: 'Reset Forgotten Password',
-      //     html: `Here is a link reset your password.  It will expire after 4hrs. <a href="${resetLink}">Reset my Password</>`,
-      //   }
-      //   await transporter.sendMail(message)
-      // } catch (err) {
-      //   console.error(err)
-      // }
 
+    handler: async (user) => {
       return user
     },
-    // end testing forgor password
     // How long the resetToken is valid for, in seconds (default is 24 hours)
     expires: 60 * 60 * 24,
 
