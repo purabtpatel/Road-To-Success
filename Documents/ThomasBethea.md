@@ -42,6 +42,12 @@ User Email Verification:
 - Email verification feature did not make it into final iteration. This is a work in progress. Branch below
 - Other commit: https://github.com/dhruvilk/Road-To-Success/commit/9a09ddb8981eeaadbdd08384710022daa1fedec9
 
+Other commits:
+- Edited landing page to remove Latin placeholder.
+- Changed catchphrase to "THE ROAD TO SUCCESS STARTS WITH A PLAN"
+- https://github.com/dhruvilk/Road-To-Success/commit/4eea33616c4e9ce0acce171f95de52dd37642faf
+- https://github.com/dhruvilk/Road-To-Success/commit/06e290a968ab059cacbb8a414474a59e5e90764e
+
 References:
 - https://medium.com/@agiannelli/building-an-authenticated-site-with-redwoodjs-and-auth0-e476a5313563
 - https://dev.to/chandrapantachhetri/sending-emails-securely-using-node-js-nodemailer-smtp-gmail-and-oauth2-g3a
