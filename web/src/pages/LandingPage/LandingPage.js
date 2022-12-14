@@ -14,7 +14,7 @@ const renderGreeting = () => {
   return (
     <div className="col-flex p-30">
       <h1 className="mb-heading">
-        THE ROAD TO SUCCESS,<br></br>STARTS WITH A PLAN
+        THE ROAD TO SUCCESS<br></br>STARTS WITH A PLAN
       </h1>
     </div>
   )
