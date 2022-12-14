@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react'
 
 import { Divider, Select, toast } from '@chakra-ui/react'
@@ -123,6 +124,7 @@ export const Success = ({ getByDate }) => {
   }, [list])
   return (
     <ul style={{ listStyleType: 'none' }}>
+
       {list &&
         list.map((item, index) => {
           if (item.status_id != 5) {
