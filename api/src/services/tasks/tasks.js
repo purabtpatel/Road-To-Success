@@ -1,4 +1,5 @@
 import { prismaVersion } from '@redwoodjs/api'
+
 import { db } from 'src/lib/db'
 
 export const tasks = () => {
@@ -36,8 +37,6 @@ export const getByDate = ({ date }) => {
     },
   })
 }
-
-
 
 export const createTask = ({ input }) => {
   input.user_id = context.currentUser.id
@@ -77,9 +76,7 @@ export const getUserTasksOfPriority = ({ user_id, priority }) => {
   })
 }
 
-
 export const rollTasksOver = async ({ date }) => {
-
   //================================================================
   //===================== WHAT THIS DOES ===========================
   //================================================================
@@ -95,34 +92,42 @@ export const rollTasksOver = async ({ date }) => {
   //|                          //DBC                               |
   //================================================================
 
-
-
   //DBC
   //console.log('beginning query procedure with algorithm payload!')
   //console.log(date)
   //console.log('above is input date!')
-  var user_id = context.currentUser.id  //to ensure correct lists
-
+  var user_id = context.currentUser.id //to ensure correct lists
 
   //checking if it is a new day:
-  var newDay = false;
-
-
+  var newDay = false
 
   //setting up date range
   var today = new Date(date)
   var tomorrow = new Date(date)
 
   var trueToday = new Date()
-  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setDate(tomorrow.getDate() + 1)
 
   //DBC
   //console.log(today)
   //console.log('is today')
 
-  var todate = new Date( today.getFullYear(), today.getMonth(), today.getDate(), 0,0,0)
-  var tomate = new Date( tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 0,0,0)
-
+  var todate = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+    0,
+    0,
+    0
+  )
+  var tomate = new Date(
+    tomorrow.getFullYear(),
+    tomorrow.getMonth(),
+    tomorrow.getDate(),
+    0,
+    0,
+    0
+  )
 
   //DBC
   /*
@@ -152,39 +157,33 @@ export const rollTasksOver = async ({ date }) => {
   //because rollover has not occurred yet nor has the user made
   //any new tasks and/or completed/deleted them
   var checkList = await db.task.findMany({
-    where: { user_id, date:{
-
-      gte: todate,
-      lt: tomate
+    where: {
+      user_id,
+      date: {
+        gte: todate,
+        lt: tomate,
+      },
     },
-  }
   })
-
-
 
   //DBC
   //console.log(checkList)
 
-  todate.setDate(todate.getDate()-1)
-  tomate.setDate(tomate.getDate()-1)
+  todate.setDate(todate.getDate() - 1)
+  tomate.setDate(tomate.getDate() - 1)
 
   //DBC
   //console.log(todate)
   //console.log(tomate)
 
-
-
   //if the list of tasks for the day is empty, and the real, actual date today is between
   //the two boundary stamps (todate and tomate), then
   //it is a new day. therefore, we can go ahead.
-  if((checkList.length == 0) && (trueToday > todate) && (trueToday < tomate))
-  {
+  if (checkList.length == 0 && trueToday > todate && trueToday < tomate) {
     newDay = true
     //DBC
     //console.log('its a brand new day')
-  }
-  else
-  {
+  } else {
     //this more of just an exit signal. the returned list isn't
     //actually going to be doing anything, so we leave and just return
     //also if we're here it means the datepicker gave us a date that's
@@ -196,12 +195,11 @@ export const rollTasksOver = async ({ date }) => {
     return checkList
   }
 
-  var counter = 7;
-  counter--;
+  var counter = 7
+  counter--
   //here's the main event - if it is a new day, let's get started!
   //(i know this newday is redundant but its for readability promise)
-  if(newDay)
-  {
+  if (newDay) {
     //first, we want to make sure that we account for possible days of being away.
     //we do this by going back at most *six days* in the past to look for
     //any tasks. if no tasks are present within seven days in the past, including today,
@@ -213,20 +211,20 @@ export const rollTasksOver = async ({ date }) => {
     counter = 6 //we only go back a week maximum
 
     //let's do the time warp again
-    while(checkList.length == 0 && counter > 0)
-    {
+    while (checkList.length == 0 && counter > 0) {
       //shift our bounds by one day back
-      todate.setDate(todate.getDate()-1)
-      tomate.setDate(tomate.getDate()-1)
+      todate.setDate(todate.getDate() - 1)
+      tomate.setDate(tomate.getDate() - 1)
 
       //get list of tasks on THIS day now
       var checkList = await db.task.findMany({
-        where: { user_id, date:{
-
-          gte: todate,
-          lt: tomate
+        where: {
+          user_id,
+          date: {
+            gte: todate,
+            lt: tomate,
+          },
         },
-      }
       })
 
       //================================================================
@@ -245,120 +243,103 @@ export const rollTasksOver = async ({ date }) => {
       //if we've found a list of tasks, retroactively it must be the one containing
       //what we need. so let's stop here and start pulling them back up based
       //on how much our counter has gone back
-      if(checkList.length != 0)
-      {
-
-        break;
+      if (checkList.length != 0) {
+        break
       }
 
-
-      counter--;
+      counter--
     }
 
-
-
-
     //real meat and potato hours start here, buckle up bucko. i wonder where the word bucko comes from
-    while(counter < 7)
-    {
+    while (counter < 7) {
       //now that we have our first date, we can begin to section out our list of tasks
       //into three groups, based on urgency, so we can preserve relative priority
 
       //doing aList
       var aList = await db.task.findMany({
-        where: { user_id,
-        AND: [
-        {date: {
-
-          gte: todate,
-          lt: tomate
-        },}
-        ],
-        AND: [
-        {urgency: 1,
+        where: {
+          user_id,
+          AND: [
+            {
+              date: {
+                gte: todate,
+                lt: tomate,
+              },
+            },
+          ],
+          AND: [{ urgency: 1 }],
         },
-      ]
-      },
 
-      orderBy: {
-        priority: 'asc',
-      },
+        orderBy: {
+          priority: 'asc',
+        },
       })
 
       //doing bList
       var bList = await db.task.findMany({
-        where: { user_id,
-        AND: [
-        {date: {
-
-          gte: todate,
-          lt: tomate
-        },}
-        ],
-        AND: [
-        {urgency: 2,
+        where: {
+          user_id,
+          AND: [
+            {
+              date: {
+                gte: todate,
+                lt: tomate,
+              },
+            },
+          ],
+          AND: [{ urgency: 2 }],
         },
-      ]
-      },
 
-      orderBy: {
-        priority: 'asc',
-      },
+        orderBy: {
+          priority: 'asc',
+        },
       })
 
       //doing cList
       var cList = await db.task.findMany({
-        where: { user_id,
-        AND: [
-        {date: {
-
-          gte: todate,
-          lt: tomate
-        },}
-        ],
-        AND: [
-        {urgency: 3,
+        where: {
+          user_id,
+          AND: [
+            {
+              date: {
+                gte: todate,
+                lt: tomate,
+              },
+            },
+          ],
+          AND: [{ urgency: 3 }],
         },
-      ]
-      },
 
-      orderBy: {
-        priority: 'asc',
-      },
+        orderBy: {
+          priority: 'asc',
+        },
       })
-
 
       //end of list making
 
       //aList, bList, and cList may contain tasks of certain urgencies and priorities
 
-
       //now we will go through each list, moving them
       //to the next day using the upper bound
       //as it is exclusive from today.
 
-      var holTitle = new String();
-      var holUse = 0;
-
+      var holTitle = new String()
+      var holUse = 0
 
       //==================================
       //=======BEGIN REINDEX BLOCK========
       //==================================
 
-      var prioCount = 1;  //for re-indexing tasks
+      var prioCount = 1 //for re-indexing tasks
 
-      let zyx = 0;
+      let zyx = 0
       //INDEXING A
-      for(let k = 0; k < aList.length; k++)
-      {
-        if(aList[k].status_id == 4 || aList[k].status_id == 5)
-        {
-          zyx = 1;
-        }
-        else
-        {
-          holUse = aList[k].user_id;
-          holTitle = aList[k].title;
+      for (let k = 0; k < aList.length; k++) {
+        if (aList[k].status_id == 4 || aList[k].status_id == 5) {
+          zyx = 1
+        } else {
+          holUse = aList[k].user_id
+          holTitle = aList[k].title
 
           const MakeTask = await db.task.create({
             data: {
@@ -367,26 +348,22 @@ export const rollTasksOver = async ({ date }) => {
               title: holTitle,
               urgency: 1,
               priority: prioCount,
-              date: tomate
+              date: tomate,
             },
           })
 
-          prioCount++;
+          prioCount++
         }
       }
 
-      prioCount = 1;
+      prioCount = 1
       //INDEXING B
-      for(let k = 0; k < bList.length; k++)
-      {
-        if(bList[k].status_id == 4 || bList[k].status_id == 5)
-        {
-          zyx = 1;
-        }
-        else
-        {
-          holUse = bList[k].user_id;
-          holTitle = bList[k].title;
+      for (let k = 0; k < bList.length; k++) {
+        if (bList[k].status_id == 4 || bList[k].status_id == 5) {
+          zyx = 1
+        } else {
+          holUse = bList[k].user_id
+          holTitle = bList[k].title
 
           const MakeTask = await db.task.create({
             data: {
@@ -395,26 +372,22 @@ export const rollTasksOver = async ({ date }) => {
               title: holTitle,
               urgency: 2,
               priority: prioCount,
-              date: tomate
+              date: tomate,
             },
           })
 
-          prioCount++;
+          prioCount++
         }
       }
 
-      prioCount = 1;
+      prioCount = 1
       //INDEXING C
-      for(let k = 0; k < cList.length; k++)
-      {
-        if(cList[k].status_id == 4 || cList[k].status_id == 5)
-        {
-          zyx = 1;
-        }
-        else
-        {
-          holUse = cList[k].user_id;
-          holTitle = cList[k].title;
+      for (let k = 0; k < cList.length; k++) {
+        if (cList[k].status_id == 4 || cList[k].status_id == 5) {
+          zyx = 1
+        } else {
+          holUse = cList[k].user_id
+          holTitle = cList[k].title
 
           const MakeTask = await db.task.create({
             data: {
@@ -423,28 +396,25 @@ export const rollTasksOver = async ({ date }) => {
               title: holTitle,
               urgency: 3,
               priority: prioCount,
-              date: tomate
+              date: tomate,
             },
           })
 
-          prioCount++;
+          prioCount++
         }
       }
       //==================================
       //========END REINDEX BLOCK=========
       //==================================
 
-
       //now our dates march forward
-      todate.setDate(todate.getDate()+1)
-      tomate.setDate(tomate.getDate()+1)
-      counter++;
+      todate.setDate(todate.getDate() + 1)
+      tomate.setDate(tomate.getDate() + 1)
+      counter++
       //these will keep going until counter is 7. if we have tasks left over then
       //cycle will repeat
     }
 
     return checkList
-
   }
 }
-
