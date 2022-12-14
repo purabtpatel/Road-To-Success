@@ -59,6 +59,7 @@ Also certain branches older than 2 weeks were deleted. They are as follows:
 + Purab and I went through and deleted unused and irrelevant files. I will not list them here but he will have them on his readme. Also certain imports in relevant files were commented out to show which files were not used.
 
 + Security team meeting with purab. Got forcing users to sign up with emails down. Sergio almost has forgot password down and tom is doing email verification. Also I added stuff to force users to make strong passwords
++ **Final update. The project is now as far as it will get. Some issues persist but this will be a fun thing for me to work on as a portfolio addition. All branches sans master have been deleted, all pull requests have been merged and/or closed. As of 12/13/2022 at 10:20PM we are ready to present.**
 
 ## Commits:
 (**These are both minor and major commits but this does not include any merges or pull requests that I may have performed as repository owner.** )
